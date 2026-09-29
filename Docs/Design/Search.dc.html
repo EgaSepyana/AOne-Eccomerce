@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="position:relative;font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff;min-height:100vh" data-screen-label="Search">
+  <div style="height:36px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500">Gratis ongkir min. belanja Rp300.000</div>
+  <div style="border-bottom:1px solid #E3E3E3;background:#fff;position:relative;z-index:2">
+    <div style="max-width:1440px;margin:0 auto;height:80px;padding:0 40px;display:flex;align-items:center;gap:40px">
+      <a href="Homepage.dc.html" style="display:flex;align-items:center;gap:10px"><img src="assets/logo-black.png" alt="Aone" style="height:28px;width:auto"><span style="font-size:20px;font-weight:700;letter-spacing:.14em">AONE</span></a>
+      <div style="flex:1;height:48px;border-bottom:1.5px solid #111;display:flex;align-items:center;gap:12px">
+        <span style="font-family:'Material Symbols Outlined';font-size:24px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">search</span>
+        <span style="font-size:18px;color:{{ qColor }}">{{ query }}</span><span style="width:1px;height:22px;background:#111;margin-left:-10px"></span>
+        <span style="flex:1"></span>
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}"><span aria-label="Hapus" style="width:32px;height:32px;border-radius:999px;background:#F4F4F4;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">close</span></sc-if>
+      </div>
+      <a href="Homepage.dc.html" style="font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px">Batal</a>
+    </div>
+  </div>
+
+  <div style="background:#fff;position:relative;z-index:2;box-shadow:0 4px 24px rgba(0,0,0,.08)">
+    <div style="max-width:1440px;margin:0 auto;padding:40px 40px 56px;display:grid;grid-template-columns:320px minmax(0,1fr);gap:64px">
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <sc-if value="{{ isFocus }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:32px">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">Pencarian terakhir</span><a href="#" style="font-size:13px;text-decoration:underline;text-underline-offset:3px">Hapus</a></div>
+              <sc-for list="{{ recent }}" as="r" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:10px;height:36px;font-size:14px;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300;color:#6B6B6B">history</span><span style="flex:1">{{ r }}</span><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';color:#6B6B6B">close</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isTyping }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:16px;font-weight:700;padding-bottom:8px">Saran</span>
+            <sc-for list="{{ suggest }}" as="s" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:10px;height:40px;font-size:15px;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300;color:#6B6B6B">search</span><span style="flex:1">{{ s.a }}<span style="font-weight:700">{{ s.b }}</span>{{ s.c }}</span><span style="font-size:12px;color:#6B6B6B">{{ s.n }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isNone }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:20px;line-height:28px;font-weight:700">Tidak ada hasil untuk “kemeja linne”</span>
+            <span style="font-size:14px;line-height:22px">Mungkin maksudmu: <a href="#" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">kemeja linen</a> (14 produk)</span>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:20px;color:#6B6B6B;padding-top:8px"><span>· Periksa ejaan kata kunci</span><span>· Gunakan kata yang lebih umum, misalnya “kemeja”</span><span>· Cari berdasarkan kategori di menu Wanita, Pria, Anak</span></div>
+          </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:16px;font-weight:700">Pencarian populer</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <sc-for list="{{ popular }}" as="p" hint-placeholder-count="8">
+              <span style="height:36px;padding:0 14px;border:1px solid #E3E3E3;display:flex;align-items:center;font-size:13px;cursor:pointer">{{ p }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">{{ rightTitle }}</span><sc-if value="{{ isTyping }}" hint-placeholder-val="{{ false }}"><a href="Kategori PLP.dc.html" style="font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px">Lihat semua 14 hasil</a></sc-if></div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+          <sc-for list="{{ products }}" as="id" hint-placeholder-count="4">
+            <dc-import name="Product Card" pid="{{ id }}" hint-size="100%,480px"></dc-import>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:1;height:420px;background:#111;opacity:.6"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Fokus&quot;,&quot;Mengetik&quot;,&quot;Tidak ada hasil&quot;],&quot;default&quot;:&quot;Fokus&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const state = this.props.state ?? 'Fokus';
+    const isFocus = state === 'Fokus', isTyping = state === 'Mengetik', isNone = state === 'Tidak ada hasil';
+    const query = isFocus ? 'Cari kaos, kemeja, celana…' : isTyping ? 'linen' : 'kemeja linne';
+    return {
+      isFocus, isTyping, isNone,
+      query, hasQuery: !isFocus, qColor: isFocus ? '#6B6B6B' : '#111',
+      recent: ['kulot wanita', 'cardigan rajut', 'celana jeans wide leg'],
+      popular: ['kemeja linen', 'kaos oversize', 'celana kulot', 'hoodie', 'rok plisket', 'blazer', 'dress midi', 'tank top'],
+      suggest: [
+        { a: 'kemeja ', b: 'linen', c: '', n: '14' },
+        { a: 'celana kulot ', b: 'linen', c: '', n: '6' },
+        { a: '', b: 'linen', c: ' wanita', n: '23' },
+        { a: 'dress ', b: 'linen', c: '', n: '4' },
+        { a: '', b: 'linen', c: ' blend', n: '11' }
+      ],
+      rightTitle: isFocus ? 'Sedang tren' : isTyping ? 'Produk' : 'Produk populer',
+      products: isFocus ? [8, 1, 4, 15] : isTyping ? [1, 2, 10, 7] : [8, 4, 0, 1]
+    };
+  }
+}
+</script>
+</body>
+</html>

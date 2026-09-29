@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<a href="Produk PDP.dc.html" style="display:flex;flex-direction:column;min-width:0;color:#111;text-decoration:none;font-family:'Inter','Helvetica Neue',Arial,sans-serif">
+  <div style="position:relative;aspect-ratio:3/4;background:#F4F4F4;display:flex;align-items:center;justify-content:center;padding:16px">
+    <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;line-height:16px;color:#6B6B6B;text-align:center">{{ img }}</span>
+    <sc-if value="{{ badgeNew }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:8px;left:8px;background:#fff;color:#111;font-size:11px;line-height:14px;font-weight:700;padding:4px 6px;letter-spacing:.04em">{{ p.badge }}</span></sc-if>
+    <sc-if value="{{ badgeSale }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:8px;left:8px;background:#111;color:#fff;font-size:11px;line-height:14px;font-weight:700;padding:4px 6px;letter-spacing:.04em">{{ p.badge }}</span></sc-if>
+    <sc-if value="{{ badgeStock }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:8px;left:8px;background:#fff;color:#6B6B6B;border:1px solid #E3E3E3;font-size:11px;line-height:14px;font-weight:700;padding:3px 6px;letter-spacing:.04em">{{ p.badge }}</span></sc-if>
+    <sc-if value="{{ quick }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:8px;right:8px;bottom:8px;height:40px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.04em;box-shadow:0 4px 24px rgba(0,0,0,.08)">LIHAT CEPAT</span></sc-if>
+  </div>
+  <div style="padding-top:12px;display:flex;flex-direction:column;gap:4px">
+    <div style="display:flex;align-items:center;gap:8px;min-height:24px">
+      <sc-for list="{{ sw }}" as="s" hint-placeholder-count="3">
+        <span style="width:14px;height:14px;border-radius:999px;border:1px solid #E3E3E3;background:{{ s.c }};box-shadow:{{ s.ring }};flex:none"></span>
+      </sc-for>
+      <span style="font-size:11px;color:#6B6B6B">{{ more }}</span>
+      <span style="flex:1"></span>
+      <span aria-label="Wishlist" style="width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:{{ heartFill }}">favorite</span>
+    </div>
+    <div style="font-size:12px;line-height:16px;color:#6B6B6B">{{ p.meta }}</div>
+    <div style="font-size:14px;line-height:20px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:40px">{{ p.name }}</div>
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-variant-numeric:tabular-nums">
+      <span style="font-size:18px;line-height:24px;font-weight:700">{{ p.price }}</span>
+      <sc-if value="{{ hasOld }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#6B6B6B;text-decoration:line-through">{{ p.old }}</span></sc-if>
+    </div>
+    <sc-if value="{{ hasRating }}" hint-placeholder-val="{{ true }}"><div style="font-size:12px;line-height:16px;display:flex;gap:4px;align-items:center"><span>★ {{ p.rating }}</span><span style="color:#6B6B6B">({{ p.reviews }})</span></div></sc-if>
+  </div>
+</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:300,&quot;height&quot;:560},&quot;pid&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:15,&quot;tsType&quot;:&quot;number&quot;},&quot;p&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{name,meta,price,old?,colors,rating,reviews,badge?,badgeType?,img}&quot;},&quot;quick&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;wished&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const CAT = [
+      { name: 'Kaos Katun Supima Crew Neck', meta: 'Wanita · XS–XXL', price: 'Rp149.000', colors: ['#111111', '#FFFFFF', '#C9B99A', '#7A8A6E', '#2F3A56', '#B04A3B'], rating: '4.8', reviews: 212, badge: 'BARU', badgeType: 'new', img: 'packshot · kaos crew neck hitam' },
+      { name: 'Kemeja Linen Oversize Lengan Panjang', meta: 'Wanita · S–XL', price: 'Rp279.000', old: 'Rp349.000', colors: ['#F2EFE8', '#111111', '#D8C8AE', '#6E7457'], rating: '4.7', reviews: 98, badge: '-20%', badgeType: 'sale', img: 'packshot · kemeja linen putih' },
+      { name: 'Celana Kulot Linen Blend', meta: 'Wanita · S–XL', price: 'Rp249.000', colors: ['#D8C8AE', '#111111', '#8A6F55'], rating: '4.6', reviews: 154, img: 'packshot · kulot beige' },
+      { name: 'Cardigan Rajut Ringan Kerah V', meta: 'Wanita · XS–XL', price: 'Rp299.000', colors: ['#E9E1D3', '#3B3B3B', '#9AA7B8', '#7B2F3A', '#111111'], rating: '4.9', reviews: 67, badge: 'BARU', badgeType: 'new', img: 'packshot · cardigan krem' },
+      { name: 'Celana Jeans Wide Leg High Rise', meta: 'Wanita · 25–32', price: 'Rp399.000', colors: ['#3E5670', '#1E2A3A', '#111111'], rating: '4.7', reviews: 301, img: 'packshot · jeans wide leg' },
+      { name: 'Rok Plisket Midi', meta: 'Wanita · S–L', price: 'Rp229.000', colors: ['#111111', '#C9B99A', '#6E7457', '#2F3A56'], rating: '4.5', reviews: 88, badge: 'STOK TERBATAS', badgeType: 'stock', img: 'packshot · rok plisket hitam' },
+      { name: 'Blus Rayon Kerah Mandarin', meta: 'Wanita · XS–XL', price: 'Rp199.000', colors: ['#FFFFFF', '#B8C4B0', '#111111'], rating: '4.6', reviews: 45, img: 'packshot · blus rayon putih' },
+      { name: 'Dress Midi Katun Tanpa Lengan', meta: 'Wanita · XS–L', price: 'Rp319.000', old: 'Rp399.000', colors: ['#111111', '#6E7457'], rating: '4.8', reviews: 73, badge: 'SALE', badgeType: 'sale', img: 'packshot · dress midi hitam' },
+      { name: 'Hoodie Fleece Resleting', meta: 'Wanita · S–XXL', price: 'Rp349.000', colors: ['#9E9E9E', '#111111', '#E9E1D3', '#2F3A56'], rating: '4.9', reviews: 420, img: 'packshot · hoodie abu' },
+      { name: 'Kaos Ribbed Lengan Panjang', meta: 'Wanita · XS–L', price: 'Rp169.000', colors: ['#FFFFFF', '#111111', '#C9B99A', '#7B2F3A', '#9AA7B8'], rating: '4.7', reviews: 190, img: 'packshot · kaos ribbed putih' },
+      { name: 'Blazer Relaxed Fit', meta: 'Wanita · S–XL', price: 'Rp549.000', colors: ['#111111', '#D8C8AE'], rating: '4.8', reviews: 39, badge: 'BARU', badgeType: 'new', img: 'packshot · blazer hitam' },
+      { name: 'Celana Jogger Airy', meta: 'Wanita · S–XXL', price: 'Rp199.000', old: 'Rp249.000', colors: ['#111111', '#6E7457', '#9E9E9E'], rating: '4.6', reviews: 256, badge: '-20%', badgeType: 'sale', img: 'packshot · jogger hitam' },
+      { name: 'Kaos Crop Boxy Fit', meta: 'Wanita · XS–L', price: 'Rp129.000', colors: ['#FFFFFF', '#111111', '#E7C9C1', '#9AA7B8'], rating: '4.5', reviews: 132, img: 'packshot · kaos crop putih' },
+      { name: 'Celana Bahan Straight Leg', meta: 'Wanita · S–XL', price: 'Rp299.000', colors: ['#111111', '#3B3B3B', '#D8C8AE'], rating: '4.7', reviews: 84, img: 'packshot · celana bahan hitam' },
+      { name: 'Jaket Parka Ringan Anti Air', meta: 'Wanita · S–XL', price: 'Rp499.000', colors: ['#6E7457', '#111111', '#D8C8AE'], rating: '4.8', reviews: 57, badge: 'BARU', badgeType: 'new', img: 'packshot · parka olive' },
+      { name: 'Tank Top Ribbed', meta: 'Wanita · XS–L', price: 'Rp99.000', colors: ['#111111', '#FFFFFF', '#C9B99A', '#7B2F3A', '#6E7457', '#9AA7B8'], rating: '4.6', reviews: 348, img: 'packshot · tank top hitam' }
+    ];
+    const p = this.props.p ?? CAT[(this.props.pid ?? 0) % CAT.length];
+    const colors = p.colors ?? [];
+    const t = p.badgeType;
+    return {
+      p,
+      img: p.img ?? 'packshot 3:4',
+      sw: colors.slice(0, 4).map((c, i) => ({ c, ring: i === 0 ? '0 0 0 2px #fff, 0 0 0 3.5px #111' : 'none' })),
+      more: colors.length > 4 ? '+' + (colors.length - 4) : '',
+      badgeNew: t === 'new', badgeSale: t === 'sale', badgeStock: t === 'stock',
+      hasOld: !!p.old, hasRating: !!p.rating,
+      quick: !!this.props.quick,
+      heartFill: (this.props.wished || p.wished) ? "'FILL' 1, 'wght' 300" : "'FILL' 0, 'wght' 300"
+    };
+  }
+}
+</script>
+</body>
+</html>

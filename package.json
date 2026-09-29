@@ -1,0 +1,14 @@
+{
+  "name": "aone-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun --filter aone-web dev",
+    "build": "bun --filter aone-web build",
+    "start": "bun --filter aone-web start"
+  },
+  "packageManager": "bun@1.4.2"
+}

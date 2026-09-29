@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff" data-screen-label="Bantuan">
+  <dc-import name="Aone Header" active="" cart-count="{{ two }}" hint-size="100%,101px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+  <section style="background:#F4F4F4">
+    <div style="max-width:1440px;margin:0 auto;padding:64px 40px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;gap:8px;font-size:12px;line-height:16px;color:#6B6B6B"><a href="Homepage.dc.html" style="color:#6B6B6B">Beranda</a><span>/</span><span style="color:#111">Pusat Bantuan</span></div>
+      <h1 style="margin:0;font-size:56px;line-height:62px;font-weight:700">Ada yang bisa kami bantu?</h1>
+      <div style="max-width:720px;height:56px;background:#fff;border:1px solid #111;display:flex;align-items:center;gap:12px;padding:0 16px">
+        <span style="font-family:'Material Symbols Outlined';font-size:24px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">search</span>
+        <span style="flex:1;font-size:16px;color:#6B6B6B">Cari topik, misalnya “tukar ukuran”</span>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span style="font-size:13px;color:#6B6B6B">Sering dicari:</span>
+        <sc-for list="{{ hot }}" as="h" hint-placeholder-count="4"><span style="height:32px;padding:0 12px;background:#fff;border:1px solid #E3E3E3;display:flex;align-items:center;font-size:13px;cursor:pointer">{{ h }}</span></sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1440px;margin:0 auto;padding:0 40px">
+    <section style="padding-top:64px;display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700">Pilih topik</h2>
+      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px">
+        <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6">
+          <a href="#faq" style="border:1px solid {{ t.bd }};padding:24px 20px;display:flex;flex-direction:column;gap:12px;min-height:160px;color:#111">
+            <span style="font-family:'Material Symbols Outlined';font-size:32px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">{{ t.i }}</span>
+            <span style="font-size:16px;line-height:22px;font-weight:700;margin-top:auto">{{ t.l }}</span>
+            <span style="font-size:12px;color:#6B6B6B">{{ t.n }} artikel</span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="faq" style="padding-top:96px;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="display:flex;align-items:baseline;gap:12px"><h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700">Tukar &amp; Retur</h2><span style="font-size:14px;color:#6B6B6B">Pertanyaan umum</span></div>
+        <div style="display:flex;flex-direction:column">
+          <div style="border-top:1px solid #E3E3E3;padding:24px 0;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:24px"><span style="font-size:18px;line-height:26px;font-weight:700">Bagaimana cara tukar ukuran?</span><span style="font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga'">remove</span></div>
+            <p style="margin:0;font-size:16px;line-height:24px;max-width:720px">Tukar ukuran gratis dalam 14 hari sejak paket diterima, selama label masih terpasang dan produk belum dicuci.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:22px;max-width:720px">
+              <span>1. Buka <a href="Profil.dc.html" style="text-decoration:underline;text-underline-offset:3px">Pesanan saya</a>, pilih pesanan, lalu tekan Ajukan tukar.</span>
+              <span>2. Pilih produk dan ukuran pengganti.</span>
+              <span>3. Kurir kami menjemput paket dari alamatmu tanpa biaya.</span>
+              <span>4. Ukuran baru dikirim setelah paket kami terima, biasanya 2–4 hari kerja.</span>
+            </div>
+          </div>
+          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+            <div style="border-top:1px solid #E3E3E3;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;cursor:pointer"><span style="font-size:18px;line-height:26px;font-weight:700">{{ f }}</span><span style="font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga'">add</span></div>
+          </sc-for>
+          <div style="border-top:1px solid #E3E3E3"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;font-size:14px"><span>Artikel ini membantu?</span><span style="height:36px;padding:0 16px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:6px;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">thumb_up</span>Ya</span><span style="height:36px;padding:0 16px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:6px;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">thumb_down</span>Tidak</span></div>
+      </div>
+
+      <aside style="position:sticky;top:125px;display:flex;flex-direction:column;gap:16px">
+        <div style="border:1px solid #111;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:20px;line-height:28px;font-weight:700">Lacak pesanan</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nomor pesanan</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#6B6B6B">Contoh: AON-260928-4812</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Email atau nomor HP</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#6B6B6B">Yang dipakai saat checkout</span></div>
+          <span style="height:48px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em;cursor:pointer">LACAK</span>
+        </div>
+        <div style="background:#F4F4F4;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:20px;line-height:28px;font-weight:700">Masih butuh bantuan?</span>
+          <sc-for list="{{ contacts }}" as="c" hint-placeholder-count="3">
+            <a href="#" style="display:flex;gap:14px;align-items:flex-start;background:#fff;padding:16px;color:#111">
+              <span style="font-family:'Material Symbols Outlined';font-size:24px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">{{ c.i }}</span>
+              <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:700">{{ c.t }}</span><span style="font-size:13px;color:#6B6B6B">{{ c.d }}</span></div>
+              <span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">chevron_right</span>
+            </a>
+          </sc-for>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <div style="height:96px"></div>
+  <dc-import name="Aone Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const active = 'Tukar & Retur';
+    return {
+      two: 2,
+      hot: ['Status pesanan', 'Tukar ukuran', 'Bayar COD', 'Voucher tidak bisa dipakai'],
+      topics: [
+        ['receipt_long', 'Pesanan', 12], ['local_shipping', 'Pengiriman', 9], ['sync_alt', 'Tukar & Retur', 8],
+        ['credit_card', 'Pembayaran', 11], ['straighten', 'Ukuran & Produk', 7], ['person', 'Akun & Member', 6]
+      ].map(([i, l, n]) => ({ i, l, n, bd: l === active ? '#111' : '#E3E3E3' })),
+      faqs: [
+        'Berapa lama dana retur kembali?',
+        'Produk apa saja yang tidak bisa ditukar?',
+        'Bisakah tukar ke warna atau produk lain?',
+        'Paket yang saya terima rusak atau salah kirim',
+        'Bisakah retur pesanan COD?',
+        'Tukar di toko offline Aone'
+      ],
+      contacts: [
+        { i: 'chat', t: 'WhatsApp', d: 'Balasan rata-rata 5 menit · 08.00–22.00 WIB' },
+        { i: 'mail', t: 'Email', d: 'halo@aone.id · Dibalas dalam 1×24 jam' },
+        { i: 'storefront', t: 'Toko offline', d: 'Temukan toko Aone terdekat' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

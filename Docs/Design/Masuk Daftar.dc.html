@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff" data-screen-label="Masuk / Daftar">
+  <dc-import name="Aone Header" active="" cart-count="{{ two }}" hint-size="100%,101px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+  <div style="max-width:1200px;margin:0 auto;padding:64px 40px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:96px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;border-bottom:1px solid #E3E3E3">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+          <a href="#" style="position:relative;flex:1;height:56px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em;color:{{ t.c }}">{{ t.l }}<sc-if value="{{ t.on }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#111"></span></sc-if></a>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:8px"><h1 style="margin:0;font-size:36px;line-height:44px;font-weight:700">Selamat datang kembali</h1><span style="font-size:14px;color:#6B6B6B">Masuk untuk melihat pesanan, wishlist, dan voucher.</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Email atau nomor HP</span><span style="height:48px;border:1px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px">nadia.putri@gmail.com<span style="width:1px;height:20px;background:#111;margin-left:1px"></span></span></div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between"><span style="font-size:12px;font-weight:500">Kata sandi</span><a href="#" style="font-size:12px;text-decoration:underline;text-underline-offset:3px">Lupa kata sandi?</a></div>
+            <span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;letter-spacing:.2em">••••••••<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300;letter-spacing:0;cursor:pointer">visibility</span></span>
+          </div>
+          <span style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">check</span>Ingat saya di perangkat ini</span>
+          <a href="Profil.dc.html" style="height:52px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">MASUK</a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isRegister }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:8px"><h1 style="margin:0;font-size:36px;line-height:44px;font-weight:700">Buat akun Aone</h1><span style="font-size:14px;color:#6B6B6B">Dapatkan diskon 10% untuk pembelian pertama.</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nama lengkap</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">Nadia Putri</span></div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Email</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">nadia.putri@gmail.com</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nomor HP</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">0812 3456 7890</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;font-weight:500">Kata sandi</span>
+            <span style="height:48px;border:1px solid #111;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;letter-spacing:.2em">••••••<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300;letter-spacing:0">visibility</span></span>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <sc-for list="{{ rules }}" as="r" hint-placeholder-count="3">
+                <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:{{ r.c }}"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">{{ r.i }}</span>{{ r.l }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Tanggal lahir <span style="color:#6B6B6B;font-weight:400">(opsional)</span></span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;color:#6B6B6B">HH / BB / TTTT<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300;color:#111">calendar_today</span></span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Belanja untuk</span><div style="display:flex;height:48px"><span style="flex:1;border:1px solid #111;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">Wanita</span><span style="flex:1;border:1px solid #E3E3E3;border-left:none;display:flex;align-items:center;justify-content:center;font-size:13px">Pria</span><span style="flex:1;border:1px solid #E3E3E3;border-left:none;display:flex;align-items:center;justify-content:center;font-size:13px">Semua</span></div></div>
+          </div>
+          <span style="display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:20px"><span style="flex:none;width:20px;height:20px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">check</span>Kirimi saya info koleksi baru dan promo lewat email</span>
+          <a href="Profil.dc.html" style="height:52px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">DAFTAR</a>
+          <span style="font-size:12px;line-height:18px;color:#6B6B6B">Dengan mendaftar, kamu menyetujui <a href="#" style="color:#111;text-decoration:underline;text-underline-offset:2px">Syarat &amp; Ketentuan</a> dan <a href="#" style="color:#111;text-decoration:underline;text-underline-offset:2px">Kebijakan Privasi</a> Aone.</span>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;color:#6B6B6B"><span style="flex:1;height:1px;background:#E3E3E3"></span>atau<span style="flex:1;height:1px;background:#E3E3E3"></span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+        <span style="height:48px;border:1px solid #111;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:500;cursor:pointer"><span style="width:20px;height:20px;border-radius:999px;border:1.5px solid #111;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">G</span>Lanjutkan dengan Google</span>
+        <span style="height:48px;border:1px solid #111;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:500;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">sms</span>Masuk dengan OTP</span>
+      </div>
+      <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ true }}">
+        <a href="Checkout.dc.html" style="align-self:center;font-size:14px;text-decoration:underline;text-underline-offset:3px">Lanjut checkout sebagai tamu</a>
+      </sc-if>
+    </div>
+
+    <aside style="display:flex;flex-direction:column;gap:24px;position:sticky;top:125px">
+      <div style="aspect-ratio:4/3;background:#F4F4F4;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;color:#6B6B6B">foto kampanye member · 4:3</div>
+      <span style="font-size:20px;line-height:28px;font-weight:700">Untung jadi member Aone</span>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <sc-for list="{{ perks }}" as="p" hint-placeholder-count="4">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <span style="font-family:'Material Symbols Outlined';font-size:24px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">{{ p.i }}</span>
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:700">{{ p.t }}</span><span style="font-size:13px;line-height:18px;color:#6B6B6B">{{ p.d }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </aside>
+  </div>
+
+  <div style="height:96px"></div>
+  <dc-import name="Aone Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Masuk&quot;,&quot;Daftar&quot;],&quot;default&quot;:&quot;Masuk&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const mode = this.props.mode ?? 'Masuk';
+    const isLogin = mode === 'Masuk';
+    return {
+      two: 2, isLogin, isRegister: !isLogin,
+      tabs: ['MASUK', 'DAFTAR'].map((l, i) => { const on = (i === 0) === isLogin; return { l, on, c: on ? '#111' : '#6B6B6B' }; }),
+      rules: [
+        { l: 'Minimal 8 karakter', ok: false }, { l: 'Mengandung huruf dan angka', ok: true }, { l: 'Berbeda dari email', ok: true }
+      ].map(r => ({ l: r.l, i: r.ok ? 'check' : 'close', c: r.ok ? '#111' : '#6B6B6B' })),
+      perks: [
+        { i: 'sell', t: 'Diskon 10% pembelian pertama', d: 'Voucher otomatis masuk ke akunmu setelah daftar.' },
+        { i: 'favorite', t: 'Wishlist di semua perangkat', d: 'Dapat kabar saat produk simpananmu turun harga atau restok.' },
+        { i: 'bolt', t: 'Checkout lebih cepat', d: 'Alamat dan metode pembayaran tersimpan aman.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff;min-height:100vh" data-screen-label="Checkout">
+  <div style="border-bottom:1px solid #E3E3E3">
+    <header style="max-width:1200px;margin:0 auto;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between">
+      <a href="Homepage.dc.html" style="display:flex;align-items:center;gap:10px"><img src="assets/logo-black.png" alt="Aone" style="height:28px;width:auto"><span style="font-size:20px;font-weight:700;letter-spacing:.14em">AONE</span></a>
+      <span style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">lock</span>Checkout Aman</span>
+    </header>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:40px 40px 96px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:64px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:28px;height:28px;border-radius:999px;border:1.5px solid {{ s.bd }};background:{{ s.bg }};color:{{ s.fg }};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ s.mark }}</span>
+            <span style="font-size:14px;font-weight:{{ s.fw }};color:{{ s.tc }}">{{ s.l }}</span>
+            <sc-if value="{{ s.line }}" hint-placeholder-val="{{ true }}"><span style="width:48px;height:1px;background:#E3E3E3"></span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isShip }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#F4F4F4;padding:16px;font-size:14px"><span>Sudah punya akun? Masuk untuk memakai alamat tersimpan.</span><a href="#" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Masuk</a></div>
+          <section style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-size:20px;line-height:28px;font-weight:700">Kontak</h2>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Email</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">nadia.putri@gmail.com</span></div>
+          </section>
+          <section style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-size:20px;line-height:28px;font-weight:700">Alamat pengiriman</h2>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nama lengkap</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">Nadia Putri</span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nomor HP</span><span style="height:48px;border:1.5px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px">812 3456</span><span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 400">warning</span>Nomor HP harus diawali 08 atau +62, minimal 10 digit</span></div>
+              <div style="grid-column:span 2;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Alamat lengkap</span><span style="height:48px;border:1px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px">Jl. Kemang Raya No. 18, RT 04/RW 02<span style="width:1px;height:20px;background:#111;margin-left:2px"></span></span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Provinsi</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px">DKI Jakarta<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">expand_more</span></span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Kota / Kabupaten</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px">Jakarta Selatan<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">expand_more</span></span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Kecamatan</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px">Mampang Prapatan<span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">expand_more</span></span></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Kode pos</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px">12730</span></div>
+            </div>
+          </section>
+          <section style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-size:20px;line-height:28px;font-weight:700">Metode pengiriman</h2>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ couriers }}" as="c" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:14px;padding:16px;border:{{ c.bd }};margin-top:-1px;cursor:pointer">
+                  <span style="width:20px;height:20px;border-radius:999px;border:1.5px solid #111;display:flex;align-items:center;justify-content:center"><sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><span style="width:10px;height:10px;border-radius:999px;background:#111"></span></sc-if></span>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:500">{{ c.n }}</span><span style="font-size:12px;color:#6B6B6B">{{ c.eta }}</span></div>
+                  <span style="font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">{{ c.p }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </section>
+          <a href="#" style="height:52px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">LANJUT KE PEMBAYARAN</a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPay }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <div style="border:1px solid #E3E3E3;padding:20px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">check</span>Pengiriman</span><a href="#" style="font-size:13px;text-decoration:underline;text-underline-offset:3px">Ubah</a></div>
+            <div style="display:grid;grid-template-columns:120px minmax(0,1fr);row-gap:8px;font-size:14px;line-height:20px"><span style="color:#6B6B6B">Kontak</span><span>nadia.putri@gmail.com · 0812 3456 7890</span><span style="color:#6B6B6B">Alamat</span><span>Nadia Putri, Jl. Kemang Raya No. 18, RT 04/RW 02, Mampang Prapatan, Jakarta Selatan 12730</span><span style="color:#6B6B6B">Kurir</span><span>JNE Reguler · Estimasi tiba 30 Sep–2 Okt · Gratis</span></div>
+          </div>
+          <section style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-size:20px;line-height:28px;font-weight:700">Metode pembayaran</h2>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ payments }}" as="p" hint-placeholder-count="6">
+                <div style="display:flex;flex-direction:column;gap:14px;padding:16px;border:{{ p.bd }};margin-top:-1px;cursor:pointer">
+                  <div style="display:flex;align-items:center;gap:14px">
+                    <span style="width:20px;height:20px;border-radius:999px;border:1.5px solid #111;display:flex;align-items:center;justify-content:center"><sc-if value="{{ p.on }}" hint-placeholder-val="{{ false }}"><span style="width:10px;height:10px;border-radius:999px;background:#111"></span></sc-if></span>
+                    <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:500">{{ p.n }}</span><span style="font-size:12px;color:#6B6B6B">{{ p.d }}</span></div>
+                    <div style="display:flex;gap:4px"><sc-for list="{{ p.logos }}" as="l" hint-placeholder-count="2"><span style="height:24px;padding:0 6px;border:1px solid #E3E3E3;color:#6B6B6B;font-size:10px;font-weight:700;display:flex;align-items:center">{{ l }}</span></sc-for></div>
+                  </div>
+                  <sc-if value="{{ p.on }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-left:34px">
+                      <sc-for list="{{ banks }}" as="b" hint-placeholder-count="4"><span style="height:44px;border:1px solid {{ b.bd }};background:{{ b.bg }};color:{{ b.fg }};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ b.l }}</span></sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </section>
+          <a href="#" style="height:52px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">LANJUT KE REVIEW</a>
+        </div>
+      </sc-if>
+
+      <div style="border-top:1px solid #E3E3E3;padding-top:20px;display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="1"><span style="font-size:16px;font-weight:700;color:#B5B5B5">{{ u }}</span></sc-for>
+      </div>
+    </div>
+
+    <aside style="position:sticky;top:24px;background:#F4F4F4;padding:24px;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">Pesananmu (3)</span><a href="Keranjang.dc.html" style="font-size:13px;text-decoration:underline;text-underline-offset:3px">Ubah</a></div>
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="3">
+        <div style="display:flex;gap:12px">
+          <span style="position:relative;width:60px;flex:none;aspect-ratio:3/4;background:#fff;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:9px;color:#6B6B6B">3:4<span style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:999px;background:#111;color:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">1</span></span>
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;line-height:18px">{{ it.n }}</span><span style="font-size:12px;color:#6B6B6B">{{ it.o }}</span></div>
+          <span style="font-size:13px;font-weight:700;font-variant-numeric:tabular-nums">{{ it.p }}</span>
+        </div>
+      </sc-for>
+      <div style="border-top:1px solid #E3E3E3;padding-top:16px;display:flex;flex-direction:column;gap:10px;font-size:14px;font-variant-numeric:tabular-nums">
+        <div style="display:flex;justify-content:space-between"><span>Subtotal</span><span>Rp627.000</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Ongkos kirim</span><span style="font-weight:700">Gratis</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Diskon AONEBARU</span><span>-Rp62.700</span></div>
+      </div>
+      <div style="border-top:1px solid #111;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline;font-variant-numeric:tabular-nums"><span style="font-size:16px;font-weight:700">Total</span><span style="font-size:24px;line-height:30px;font-weight:700">Rp564.300</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;line-height:16px">
+        <span style="display:flex;gap:8px;align-items:center"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">sync_alt</span>Tukar ukuran gratis 14 hari</span>
+        <span style="display:flex;gap:8px;align-items:center"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">verified_user</span>Pembayaran terenkripsi dan aman</span>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;step&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Pengiriman&quot;,&quot;Pembayaran&quot;],&quot;default&quot;:&quot;Pengiriman&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const step = this.props.step ?? 'Pengiriman';
+    const idx = step === 'Pembayaran' ? 1 : 0;
+    const labels = ['Pengiriman', 'Pembayaran', 'Review'];
+    const sel = 'Virtual Account';
+    const bank = 'BCA';
+    return {
+      isShip: idx === 0, isPay: idx === 1,
+      steps: labels.map((l, i) => {
+        const done = i < idx, cur = i === idx;
+        return { l, mark: done ? '✓' : String(i + 1), bg: done || cur ? '#111' : '#fff', fg: done || cur ? '#fff' : '#B5B5B5', bd: done || cur ? '#111' : '#E3E3E3', fw: cur ? 700 : 400, tc: done || cur ? '#111' : '#6B6B6B', line: i < 2 };
+      }),
+      upcoming: labels.slice(idx + 1),
+      couriers: [
+        { n: 'JNE Reguler', eta: 'Estimasi tiba 30 Sep–2 Okt', p: 'Gratis', on: true },
+        { n: 'SiCepat BEST', eta: 'Estimasi tiba besok, 29 Sep', p: 'Rp18.000', on: false },
+        { n: 'J&T Express', eta: 'Estimasi tiba 30 Sep–1 Okt', p: 'Rp15.000', on: false }
+      ].map(c => ({ ...c, bd: c.on ? '1.5px solid #111' : '1px solid #E3E3E3' })),
+      payments: [
+        { n: 'Virtual Account', d: 'Dicek otomatis, tanpa konfirmasi manual', logos: ['BCA', 'MANDIRI', 'BNI', 'BRI'] },
+        { n: 'E-wallet', d: 'GoPay, OVO, DANA, ShopeePay', logos: ['GOPAY', 'OVO', 'DANA'] },
+        { n: 'QRIS', d: 'Scan dari aplikasi bank atau e-wallet mana pun', logos: ['QRIS'] },
+        { n: 'Kartu kredit / debit', d: 'Visa, Mastercard, JCB', logos: ['VISA', 'MC'] },
+        { n: 'Cicilan 0%', d: '3, 6, atau 12 bulan dengan kartu kredit & Kredivo', logos: ['KREDIVO'] },
+        { n: 'Bayar di tempat (COD)', d: 'Bayar tunai saat paket tiba', logos: ['COD'] }
+      ].map(p => ({ ...p, on: p.n === sel, bd: p.n === sel ? '1.5px solid #111' : '1px solid #E3E3E3' })),
+      banks: ['BCA', 'Mandiri', 'BNI', 'BRI'].map(l => ({ l, bg: l === bank ? '#111' : '#fff', fg: l === bank ? '#fff' : '#111', bd: l === bank ? '#111' : '#E3E3E3' })),
+      items: [
+        { n: 'Kemeja Linen Oversize Lengan Panjang', o: '00 Putih · M', p: 'Rp279.000' },
+        { n: 'Celana Kulot Linen Blend', o: '32 Beige · M', p: 'Rp249.000' },
+        { n: 'Tank Top Ribbed', o: '09 Hitam · M', p: 'Rp99.000' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

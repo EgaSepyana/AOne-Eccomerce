@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="background:#111;color:#fff;font-family:'Inter','Helvetica Neue',Arial,sans-serif">
+  <div style="max-width:1440px;margin:0 auto;padding:64px 40px 32px">
+    <div style="display:grid;grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid #333">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:10px"><img src="assets/logo-white.png" alt="Aone" style="height:28px;width:auto"><span style="font-size:20px;font-weight:700;letter-spacing:.14em">AONE</span></div>
+        <div style="font-size:16px;line-height:24px;font-weight:700;max-width:320px">Dapatkan diskon 10% untuk pembelian pertama</div>
+        <div style="display:flex;max-width:380px">
+          <div style="flex:1;height:48px;border:1px solid #6B6B6B;border-right:none;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#B5B5B5">Alamat email kamu</div>
+          <div style="height:48px;padding:0 24px;background:#fff;color:#111;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em;cursor:pointer">DAFTAR</div>
+        </div>
+      </div>
+      <sc-for list="{{ cols }}" as="col" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:14px;font-weight:700;letter-spacing:.04em">{{ col.title }}</div>
+          <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4">
+            <a href="{{ l.h }}" style="color:#B5B5B5;font-size:14px;line-height:20px">{{ l.t }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:32px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ pays }}" as="p" hint-placeholder-count="10">
+          <span style="height:28px;padding:0 10px;border:1px solid #333;color:#B5B5B5;font-size:11px;font-weight:500;display:flex;align-items:center">{{ p }}</span>
+        </sc-for>
+      </div>
+      <div style="font-size:12px;color:#B5B5B5">© 2026 Aone. Semua hak dilindungi.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:420}}">
+class Component extends DCLogic {
+  renderVals() {
+    const H = 'Bantuan.dc.html';
+    const m = (arr) => arr.map(([t, h]) => ({ t, h: h ?? '#' }));
+    return {
+      cols: [
+        { title: 'BANTUAN', links: m([['Pusat bantuan', H], ['Status pesanan', 'Profil.dc.html'], ['Pengiriman', H], ['Tukar & retur', H], ['Panduan ukuran', H], ['CS WhatsApp', H]]) },
+        { title: 'TENTANG KAMI', links: m([['Cerita Aone'], ['Toko offline'], ['Karier'], ['Keberlanjutan']]) },
+        { title: 'AKUN', links: m([['Masuk / Daftar', 'Masuk Daftar.dc.html'], ['Pesanan saya', 'Profil.dc.html'], ['Wishlist', 'Wishlist.dc.html'], ['Alamat', 'Profil.dc.html']]) },
+        { title: 'IKUTI KAMI', links: m([['Instagram', 'https://www.instagram.com/aoneidwearx/'], ['TikTok'], ['YouTube'], ['Pinterest']]) }
+      ],
+      pays: ['BCA', 'Mandiri', 'BNI', 'BRI', 'QRIS', 'GoPay', 'OVO', 'DANA', 'ShopeePay', 'Visa', 'Mastercard', 'COD', 'JNE', 'J&T', 'SiCepat']
+    };
+  }
+}
+</script>
+</body>
+</html>

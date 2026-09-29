@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  /* Reset default palette: only Aone tokens are allowed */
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-subtle: #f4f4f4;
+  --color-border: #e3e3e3;
+  --color-disabled: #b5b5b5;
+  --color-muted: #6b6b6b;
+  --color-ink: #111111;
+  --color-ink-hover: #333333;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  /* Type scale (mobile default; desktop via lg:) */
+  --text-caption: 11px;
+  --text-caption--line-height: 16px;
+  --text-small: 12px;
+  --text-small--line-height: 18px;
+  --text-body: 14px;
+  --text-body--line-height: 22px;
+  --text-h3: 16px;
+  --text-h3--line-height: 22px;
+  --text-price: 16px;
+  --text-price--line-height: 22px;
+  --text-h2: 20px;
+  --text-h2--line-height: 26px;
+  --text-h1: 24px;
+  --text-h1--line-height: 30px;
+  --text-price-lg: 24px;
+  --text-price-lg--line-height: 30px;
+  --text-display: 32px;
+  --text-display--line-height: 38px;
+  /* desktop */
+  --text-caption-lg: 12px;
+  --text-caption-lg--line-height: 16px;
+  --text-small-lg: 14px;
+  --text-small-lg--line-height: 20px;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-h3-lg: 20px;
+  --text-h3-lg--line-height: 28px;
+  --text-price-lg-d: 28px;
+  --text-price-lg-d--line-height: 34px;
+  --text-h2-lg: 28px;
+  --text-h2-lg--line-height: 36px;
+  --text-h1-lg: 36px;
+  --text-h1-lg--line-height: 44px;
+  --text-display-lg: 56px;
+  --text-display-lg--line-height: 62px;
+
+  --spacing: 4px; /* p-4 = 16px, p-6 = 24px, dst. */
+
+  --radius-none: 0;
+  --radius-full: 999px;
+
+  --shadow-overlay: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+  --ease-aone: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+}
+
+:root {
+  --header-h: 56px;
+  --announce-h: 36px;
+}
+@media (min-width: 768px) {
+  :root {
+    --header-h: 64px;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -moz-osx-font-smoothing: grayscale;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 20;
+  }
+  body {
+    @apply text-ink text-body bg-white font-sans;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

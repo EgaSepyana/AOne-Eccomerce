@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff" data-screen-label="UI Kit">
+  <div style="max-width:1440px;margin:0 auto;padding:64px 40px 96px;display:flex;flex-direction:column;gap:96px">
+    <header style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:12px"><img src="assets/logo-black.png" alt="Aone" style="height:40px;width:auto"><span style="font-size:28px;font-weight:700;letter-spacing:.14em">AONE</span></div>
+        <h1 style="margin:0;font-size:56px;line-height:62px;font-weight:700">Design System</h1>
+        <p style="margin:0;font-size:16px;line-height:24px;color:#6B6B6B;max-width:560px">Hitam, putih, dan abu netral. Warna di layar hanya datang dari foto produk.</p>
+      </div>
+      <nav style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ pages }}" as="p" hint-placeholder-count="6">
+          <a href="{{ p.f }}" style="height:36px;padding:0 14px;border:1px solid #E3E3E3;display:flex;align-items:center;font-size:13px">{{ p.l }}</a>
+        </sc-for>
+      </nav>
+    </header>
+
+    <section style="display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">01 Warna</h2>
+      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px">
+        <sc-for list="{{ colors }}" as="c" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="aspect-ratio:4/3;background:{{ c.h }};border:1px solid #E3E3E3"></div>
+            <span style="font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">{{ c.h }}</span>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;color:#6B6B6B">{{ c.t }}</span>
+            <span style="font-size:12px;line-height:16px">{{ c.u }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">02 Tipografi</h2>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-display</span><span style="font-size:12px;color:#6B6B6B">56/62 · 700</span><span style="font-size:56px;line-height:62px;font-weight:700">Linen untuk Hari Panjang</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-h1</span><span style="font-size:12px;color:#6B6B6B">36/44 · 700</span><span style="font-size:36px;line-height:44px;font-weight:700">Kemeja Linen Oversize</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-h2</span><span style="font-size:12px;color:#6B6B6B">28/36 · 700</span><span style="font-size:28px;line-height:36px;font-weight:700">Produk Terbaru</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-h3</span><span style="font-size:12px;color:#6B6B6B">20/28 · 700</span><span style="font-size:20px;line-height:28px;font-weight:700">Bahan &amp; Perawatan</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-body</span><span style="font-size:12px;color:#6B6B6B">16/24 · 400</span><span style="font-size:16px;line-height:24px">Linen blend 55% membuatnya sejuk di cuaca panas dan tidak mudah kusut.</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-small</span><span style="font-size:12px;color:#6B6B6B">14/20 · 400</span><span style="font-size:14px;line-height:20px">Kaos Katun Supima Crew Neck</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-caption</span><span style="font-size:12px;color:#6B6B6B">12/16 · 400/500</span><span style="font-size:12px;line-height:16px;color:#6B6B6B">Wanita · XS–XXL</span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-price / -lg</span><span style="font-size:12px;color:#6B6B6B">18/24 · 28/34 · 700</span><span style="display:flex;gap:24px;align-items:baseline;font-variant-numeric:tabular-nums"><span style="font-size:18px;line-height:24px;font-weight:700">Rp149.000</span><span style="font-size:28px;line-height:34px;font-weight:700">Rp279.000</span></span></div>
+        <div style="display:grid;grid-template-columns:200px 160px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #E3E3E3"><span style="font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">--text-button</span><span style="font-size:12px;color:#6B6B6B">14/20 · 700 · +0.04em</span><span style="font-size:14px;line-height:20px;font-weight:700;letter-spacing:.04em">TAMBAH KE KERANJANG</span></div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px">
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">03 Spacing</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ spaces }}" as="s" hint-placeholder-count="9">
+            <div style="display:flex;align-items:center;gap:16px"><span style="width:80px;font-family:ui-monospace,monospace;font-size:11px;color:#6B6B6B">{{ s.t }}</span><span style="height:12px;width:{{ s.w }};background:#111"></span><span style="font-size:12px">{{ s.w }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">04 Radius &amp; Shadow</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+          <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1/1;background:#F4F4F4"></div><span style="font-size:12px"><span style="font-weight:700">radius 0</span> · default semua</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1/1;display:flex;align-items:center;justify-content:center"><span style="width:60%;aspect-ratio:1/1;border-radius:999px;background:#F4F4F4"></span></div><span style="font-size:12px"><span style="font-weight:700">999px</span> · swatch, badge, ikon</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1/1;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.08)"></div><span style="font-size:12px"><span style="font-weight:700">shadow-overlay</span> · drawer, modal</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">05 Tombol</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Primary</span><span style="height:48px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">TAMBAH KE KERANJANG</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Primary · hover</span><span style="height:48px;background:#333;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">CHECKOUT</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Primary · focus</span><span style="height:48px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em;outline:2px solid #111;outline-offset:2px">BELI SEKARANG</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Primary · disabled</span><span style="height:48px;background:#E3E3E3;color:#B5B5B5;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">PILIH UKURAN</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Secondary</span><span style="height:48px;border:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;letter-spacing:.04em">LIHAT SEMUA</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Tertiary / link</span><span style="height:48px;display:flex;align-items:center;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:4px">Panduan ukuran</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Icon button</span><div style="display:flex;gap:8px"><span style="width:40px;height:40px;border-radius:999px;background:#F4F4F4;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga'">chevron_left</span><span style="width:40px;height:40px;border-radius:999px;background:#F4F4F4;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga'">chevron_right</span><span style="width:40px;height:40px;border-radius:999px;background:#fff;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">favorite</span><span style="width:40px;height:40px;border-radius:999px;background:#fff;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">zoom_in</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Pill filter</span><div style="display:flex;gap:8px"><span style="height:36px;padding:0 10px 0 12px;border:1px solid #111;display:flex;align-items:center;gap:6px;font-size:13px">Hitam<span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">close</span></span><span style="height:36px;padding:0 14px;border:1px solid #E3E3E3;display:flex;align-items:center;font-size:13px">Dengan foto</span></div></div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">06 Badge</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#F4F4F4;padding:24px">
+          <span style="background:#fff;font-size:11px;font-weight:700;padding:4px 6px;letter-spacing:.04em">BARU</span>
+          <span style="background:#111;color:#fff;font-size:11px;font-weight:700;padding:4px 6px;letter-spacing:.04em">SALE</span>
+          <span style="background:#111;color:#fff;font-size:11px;font-weight:700;padding:4px 6px;letter-spacing:.04em">-30%</span>
+          <span style="background:#111;color:#fff;font-size:11px;font-weight:700;padding:4px 6px;letter-spacing:.04em">HARGA TERBATAS</span>
+          <span style="background:#fff;color:#6B6B6B;border:1px solid #E3E3E3;font-size:11px;font-weight:700;padding:3px 6px;letter-spacing:.04em">STOK TERBATAS</span>
+        </div>
+        <span style="font-size:12px;line-height:16px;color:#6B6B6B">Maks 1 badge per kartu, kiri atas.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">07 Swatch</h2>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:14px"><span style="font-weight:700">Warna:</span> 09 Hitam</span>
+          <div style="display:flex;gap:14px">
+            <span style="width:32px;height:32px;border-radius:999px;background:#111;border:1px solid #E3E3E3;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #111"></span>
+            <span style="width:32px;height:32px;border-radius:999px;background:#F2EFE8;border:1px solid #E3E3E3"></span>
+            <span style="width:32px;height:32px;border-radius:999px;background:#D8C8AE;border:1px solid #E3E3E3"></span>
+            <span style="position:relative;width:32px;height:32px;border-radius:999px;background:#6E7457;border:1px solid #E3E3E3;overflow:hidden"><span style="position:absolute;left:-4px;right:-4px;top:15px;height:1.5px;background:#fff;transform:rotate(-45deg)"></span></span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center"><span style="width:14px;height:14px;border-radius:999px;background:#111;border:1px solid #E3E3E3;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #111"></span><span style="width:14px;height:14px;border-radius:999px;background:#fff;border:1px solid #E3E3E3"></span><span style="width:14px;height:14px;border-radius:999px;background:#C9B99A;border:1px solid #E3E3E3"></span><span style="width:14px;height:14px;border-radius:999px;background:#7A8A6E;border:1px solid #E3E3E3"></span><span style="font-size:11px;color:#6B6B6B">+2</span></div>
+          <span style="font-size:12px;line-height:16px;color:#6B6B6B">32px di PDP, 14px di kartu. Habis: garis diagonal, tetap bisa diklik untuk “Beri tahu saya”.</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">08 Ukuran</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;font-size:14px"><span><span style="font-weight:700">Ukuran:</span> M</span><span style="text-decoration:underline;text-underline-offset:3px">Panduan ukuran</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="width:48px;height:40px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:center;font-size:14px">S</span>
+            <span style="width:48px;height:40px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">M</span>
+            <span style="width:48px;height:40px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:center;font-size:14px">L</span>
+            <span style="position:relative;width:48px;height:40px;border:1px solid #E3E3E3;color:#B5B5B5;display:flex;align-items:center;justify-content:center;font-size:14px;overflow:hidden">XL<span style="position:absolute;left:-7px;right:-7px;top:19px;height:1px;background:#B5B5B5;transform:rotate(-40deg)"></span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">error</span>Sisa 2 untuk ukuran M</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">09 Kartu produk</h2>
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:16px;row-gap:40px">
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Default · BARU</span><dc-import name="Product Card" pid="0" hint-size="100%,520px"></dc-import></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Diskon</span><dc-import name="Product Card" pid="1" hint-size="100%,520px"></dc-import></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Hover · Lihat Cepat</span><dc-import name="Product Card" pid="3" quick="{{ true }}" hint-size="100%,520px"></dc-import></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Stok terbatas · di-wishlist</span><dc-import name="Product Card" pid="5" wished="{{ true }}" hint-size="100%,520px"></dc-import></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:12px;color:#6B6B6B">Skeleton</span>
+          <div style="display:flex;flex-direction:column;gap:8px"><div style="aspect-ratio:3/4;background:#F4F4F4"></div><div style="height:14px;width:40%;background:#F4F4F4;margin-top:8px"></div><div style="height:12px;width:50%;background:#F4F4F4"></div><div style="height:14px;width:90%;background:#F4F4F4"></div><div style="height:18px;width:35%;background:#F4F4F4"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">10 Input</h2>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nama lengkap</span><span style="height:48px;border:1px solid #E3E3E3;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#6B6B6B">Contoh: Nadia Putri</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Email · focus</span><span style="height:48px;border:1px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px">nadia.putri@gmail<span style="width:1px;height:20px;background:#111;margin-left:1px"></span></span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:500">Nomor HP · error</span><span style="height:48px;border:1.5px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px">812 3456</span><span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">warning</span>Nomor HP harus diawali 08 atau +62</span></div>
+        <div style="display:flex;gap:24px;align-items:center;font-size:14px">
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">check</span>Checkbox</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:999px;border:1.5px solid #111;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:999px;background:#111"></span></span>Radio</span>
+          <div style="width:120px;height:44px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between"><span style="width:40px;text-align:center;font-family:'Material Symbols Outlined';font-size:18px;font-feature-settings:'liga'">remove</span><span style="font-weight:500">1</span><span style="width:40px;text-align:center;font-family:'Material Symbols Outlined';font-size:18px;font-feature-settings:'liga'">add</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">11 Feedback</h2>
+        <div style="display:flex;align-items:center;gap:12px;background:#111;color:#fff;padding:14px 16px;box-shadow:0 4px 24px rgba(0,0,0,.08);font-size:14px"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">check_circle</span><span style="flex:1">Ditambahkan ke wishlist</span><span style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Lihat</span></div>
+        <div style="display:flex;align-items:center;gap:12px;background:#111;color:#fff;padding:14px 16px;box-shadow:0 4px 24px rgba(0,0,0,.08);font-size:14px"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">error</span><span style="flex:1">Ukuran M tersisa 2</span></div>
+        <div style="background:#F4F4F4;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+          <span style="font-family:'Material Symbols Outlined';font-size:40px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 200">shopping_bag</span>
+          <span style="font-size:16px;font-weight:700">Keranjangmu masih kosong</span>
+          <span style="height:44px;padding:0 24px;background:#111;color:#fff;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em">MULAI BELANJA</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">12 Trust &amp; Accordion</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;background:#F4F4F4;padding:16px">
+          <sc-for list="{{ trust }}" as="t" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:12px;font-size:13px;line-height:18px"><span style="font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">{{ t.i }}</span><span>{{ t.t }}</span></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <div style="border-top:1px solid #E3E3E3;padding:16px 0;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">Deskripsi</span><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">remove</span></div><span style="font-size:14px;line-height:22px">Kemeja linen potongan oversize dengan bahu turun.</span></div>
+          <div style="border-top:1px solid #E3E3E3;border-bottom:1px solid #E3E3E3;padding:16px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">Bahan &amp; Perawatan</span><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">add</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700;border-top:1px solid #111;padding-top:16px">13 Header &amp; Footer</h2>
+      <div style="border:1px solid #E3E3E3"><dc-import name="Aone Header" active="WANITA" cart-count="{{ two }}" hint-size="100%,101px"></dc-import></div>
+      <dc-import name="Aone Footer" hint-size="100%,420px"></dc-import>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      two: 2,
+      pages: [
+        { l: 'Homepage', f: 'Homepage.dc.html' }, { l: 'Kategori', f: 'Kategori PLP.dc.html' }, { l: 'Produk', f: 'Produk PDP.dc.html' },
+        { l: 'Keranjang', f: 'Keranjang.dc.html' }, { l: 'Checkout', f: 'Checkout.dc.html' }, { l: 'Search', f: 'Search.dc.html' },
+        { l: 'Wishlist', f: 'Wishlist.dc.html' }, { l: 'Bantuan', f: 'Bantuan.dc.html' }, { l: '404', f: '404.dc.html' },
+        { l: 'Masuk / Daftar', f: 'Masuk Daftar.dc.html' }, { l: 'Profil', f: 'Profil.dc.html' }
+      ],
+      colors: [
+        { h: '#FFFFFF', t: '--color-bg', u: 'Background utama' },
+        { h: '#F4F4F4', t: '--color-bg-subtle', u: 'Foto produk, section, input' },
+        { h: '#E3E3E3', t: '--color-border', u: 'Garis, border input & size' },
+        { h: '#B5B5B5', t: '--color-text-disabled', u: 'Ukuran habis, disabled' },
+        { h: '#6B6B6B', t: '--color-text-secondary', u: 'Meta info, harga coret' },
+        { h: '#111111', t: '--color-text / inverse', u: 'Teks, tombol, promo, status' }
+      ],
+      spaces: [4, 8, 12, 16, 24, 32, 48, 64, 96].map((w, i) => ({ t: '--space-' + (i + 1), w: w + 'px' })),
+      trust: [
+        { i: 'local_shipping', t: 'Gratis ongkir min. Rp300.000 · Estimasi tiba 2–4 hari' },
+        { i: 'sync_alt', t: 'Tukar ukuran gratis 14 hari' },
+        { i: 'credit_card', t: 'COD, transfer, e-wallet, cicilan 0%' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff" data-screen-label="Keranjang">
+  <dc-import name="Aone Header" active="WANITA" cart-count="{{ cartCount }}" hint-size="100%,101px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+  <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1440px;margin:0 auto;padding:96px 40px 0;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+      <span style="font-family:'Material Symbols Outlined';font-size:64px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 200">shopping_bag</span>
+      <h1 style="margin:8px 0 0;font-size:36px;line-height:44px;font-weight:700">Keranjangmu masih kosong</h1>
+      <p style="margin:0;font-size:16px;line-height:24px;color:#6B6B6B;max-width:440px">Simpan produk favoritmu di sini. Gratis ongkir untuk belanja mulai Rp300.000.</p>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <a href="Homepage.dc.html" style="height:48px;padding:0 40px;background:#111;color:#fff;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em">MULAI BELANJA</a>
+        <a href="#" style="height:48px;padding:0 32px;border:1px solid #111;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em">LIHAT WISHLIST</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ filled }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:1440px;margin:0 auto;padding:40px 40px 0;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="display:flex;align-items:baseline;gap:12px"><h1 style="margin:0;font-size:36px;line-height:44px;font-weight:700">Keranjang</h1><span style="font-size:14px;color:#6B6B6B">3 produk</span></div>
+        <div style="background:#F4F4F4;padding:16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px"><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 400">check_circle</span><span>Pesananmu dapat <span style="font-weight:700">gratis ongkir</span></span></div>
+          <span style="height:4px;background:#111"></span>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ items }}" as="it" hint-placeholder-count="3">
+            <div style="display:flex;gap:24px;padding:24px 0;border-top:1px solid #E3E3E3">
+              <a href="Produk PDP.dc.html" style="width:132px;flex:none;aspect-ratio:3/4;background:#F4F4F4;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:10px;color:#6B6B6B;text-align:center;padding:4px">{{ it.img }}</a>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;justify-content:space-between;gap:24px">
+                  <div style="display:flex;flex-direction:column;gap:4px"><a href="Produk PDP.dc.html" style="font-size:16px;line-height:22px;font-weight:500">{{ it.name }}</a><span style="font-size:12px;color:#6B6B6B">Kode {{ it.code }}</span></div>
+                  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-variant-numeric:tabular-nums"><span style="font-size:18px;font-weight:700">{{ it.price }}</span><sc-if value="{{ it.hasOld }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#6B6B6B;text-decoration:line-through">{{ it.old }}</span></sc-if></div>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <span style="height:40px;padding:0 12px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><span style="width:16px;height:16px;border-radius:999px;border:1px solid #E3E3E3;background:{{ it.hex }}"></span>{{ it.color }}<span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">expand_more</span></span>
+                  <span style="height:40px;padding:0 12px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">Ukuran: <span style="font-weight:700">{{ it.size }}</span><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">expand_more</span></span>
+                  <div style="width:120px;height:40px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;font-variant-numeric:tabular-nums">
+                    <span style="width:40px;height:38px;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';cursor:pointer">remove</span><span style="font-size:14px;font-weight:500">{{ it.qty }}</span><span style="width:40px;height:38px;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';cursor:pointer">add</span>
+                  </div>
+                </div>
+                <div style="display:flex;gap:24px;font-size:13px;margin-top:auto">
+                  <a href="#" style="display:flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:3px"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">favorite</span>Pindah ke wishlist</a>
+                  <a href="#" style="display:flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:3px"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">delete</span>Hapus</a>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+          <div style="border-top:1px solid #E3E3E3"></div>
+        </div>
+      </div>
+
+      <aside style="position:sticky;top:125px;display:flex;flex-direction:column;gap:20px;padding-top:68px">
+        <span style="font-size:20px;line-height:28px;font-weight:700">Ringkasan Pesanan</span>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;font-variant-numeric:tabular-nums">
+          <div style="display:flex;justify-content:space-between"><span>Subtotal (3 produk)</span><span>Rp627.000</span></div>
+          <div style="display:flex;justify-content:space-between"><span>Ongkos kirim</span><span style="font-weight:700">Gratis</span></div>
+          <div style="display:flex;justify-content:space-between"><span>Diskon kode AONEBARU</span><span>-Rp62.700</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:12px;font-weight:500">Kode promo</span>
+          <div style="display:flex"><span style="flex:1;height:48px;border:1px solid #111;display:flex;align-items:center;padding:0 14px;font-size:14px;font-weight:500">AONEBARU</span><span style="height:48px;padding:0 20px;border:1px solid #111;border-left:none;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em;cursor:pointer">HAPUS</span></div>
+          <span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">check</span>Diskon 10% pembelian pertama terpakai</span>
+        </div>
+        <div style="border-top:1px solid #111;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline;font-variant-numeric:tabular-nums"><span style="font-size:16px;font-weight:700">Total</span><span style="font-size:28px;line-height:34px;font-weight:700">Rp564.300</span></div>
+        <a href="Checkout.dc.html" style="height:52px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:.04em"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">lock</span>CHECKOUT</a>
+        <span style="font-size:12px;color:#6B6B6B;text-align:center">atau cicilan 0% mulai Rp188.100/bulan</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+          <sc-for list="{{ pays }}" as="p" hint-placeholder-count="8">
+            <span style="height:24px;padding:0 8px;border:1px solid #E3E3E3;color:#6B6B6B;font-size:11px;font-weight:500;display:flex;align-items:center">{{ p }}</span>
+          </sc-for>
+        </div>
+      </aside>
+    </div>
+  </sc-if>
+
+  <div style="max-width:1440px;margin:0 auto;padding:96px 40px 0;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700">{{ recTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px;row-gap:40px">
+      <sc-for list="{{ recs }}" as="id" hint-placeholder-count="4">
+        <dc-import name="Product Card" pid="{{ id }}" hint-size="100%,560px"></dc-import>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="height:96px"></div>
+  <dc-import name="Aone Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;empty&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const empty = !!this.props.empty;
+    return {
+      empty, filled: !empty,
+      cartCount: empty ? 0 : 3,
+      recTitle: empty ? 'Terlaris minggu ini' : 'Kamu mungkin juga suka',
+      recs: empty ? [8, 4, 0, 1] : [13, 3, 6, 5],
+      items: [
+        { name: 'Kemeja Linen Oversize Lengan Panjang', code: 'AW26-0417', color: '00 Putih', hex: '#F2EFE8', size: 'M', qty: 1, price: 'Rp279.000', old: 'Rp349.000', hasOld: true, img: 'kemeja linen putih' },
+        { name: 'Celana Kulot Linen Blend', code: 'AW26-0322', color: '32 Beige', hex: '#D8C8AE', size: 'M', qty: 1, price: 'Rp249.000', hasOld: false, img: 'kulot beige' },
+        { name: 'Tank Top Ribbed', code: 'AW26-0108', color: '09 Hitam', hex: '#111111', size: 'M', qty: 1, price: 'Rp99.000', hasOld: false, img: 'tank top hitam' }
+      ],
+      pays: ['BCA', 'Mandiri', 'QRIS', 'GoPay', 'OVO', 'DANA', 'ShopeePay', 'Visa', 'COD']
+    };
+  }
+}
+</script>
+</body>
+</html>

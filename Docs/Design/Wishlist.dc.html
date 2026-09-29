@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#fff;color:#111;font-family:"Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#111;text-decoration:none}a:hover{color:#6B6B6B}*{box-sizing:border-box}</style>
+</helmet>
+<div style="font-family:'Inter','Helvetica Neue',Arial,sans-serif;color:#111;background:#fff" data-screen-label="Wishlist">
+  <dc-import name="Aone Header" active="WANITA" cart-count="{{ two }}" hint-size="100%,101px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+  <div style="max-width:1440px;margin:0 auto;padding:40px 40px 0;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+      <div style="flex:1;display:flex;align-items:baseline;gap:12px"><h1 style="margin:0;font-size:36px;line-height:44px;font-weight:700">Wishlist</h1><span style="font-size:14px;color:#6B6B6B">{{ countLabel }}</span></div>
+      <sc-if value="{{ filled }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:12px;align-items:center">
+          <span style="height:40px;padding:0 12px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer"><span style="color:#6B6B6B">Urutkan:</span><span style="font-weight:500">Terakhir disimpan</span><span style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;font-feature-settings:'liga'">expand_more</span></span>
+          <span style="height:40px;padding:0 14px;border:1px solid #E3E3E3;display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer"><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">ios_share</span>Bagikan</span>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="background:#F4F4F4;padding:16px 20px;display:flex;align-items:center;gap:12px;font-size:14px;line-height:20px">
+      <span style="font-family:'Material Symbols Outlined';font-size:22px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 300">info</span>
+      <span style="flex:1">Wishlist hanya tersimpan di perangkat ini. Masuk untuk menyimpannya di semua perangkat dan dapat kabar saat harga turun.</span>
+      <a href="Masuk Daftar.dc.html" style="height:40px;padding:0 20px;border:1px solid #111;background:#fff;display:flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em">MASUK</a>
+    </div>
+
+    <sc-if value="{{ filled }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px;row-gap:48px">
+        <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+            <dc-import name="Product Card" pid="{{ it.pid }}" wished="{{ true }}" hint-size="100%,520px"></dc-import>
+            <div style="margin-top:auto;display:flex;flex-direction:column;gap:12px">
+            <sc-if value="{{ it.drop }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">trending_down</span>Harga turun sejak kamu simpan</span></sc-if>
+            <sc-if value="{{ it.out }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500"><span style="font-family:'Material Symbols Outlined';font-size:16px;line-height:1;font-feature-settings:'liga'">error</span>Stok habis untuk semua ukuran</span>
+                <span style="height:44px;border:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:.04em;cursor:pointer">BERI TAHU SAYA</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ it.inStock }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="height:44px;border:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:13px;white-space:nowrap;min-width:0;cursor:pointer"><span>Ukuran: <span style="font-weight:700">{{ it.size }}</span></span><span style="font-family:'Material Symbols Outlined';font-size:18px;line-height:1;font-feature-settings:'liga'">expand_more</span></span>
+                <span style="height:44px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:.04em;white-space:nowrap;cursor:pointer">TAMBAH KE KERANJANG</span>
+              </div>
+            </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:64px 0 32px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+        <span style="font-family:'Material Symbols Outlined';font-size:64px;line-height:1;font-feature-settings:'liga';font-variation-settings:'wght' 200">favorite</span>
+        <h2 style="margin:8px 0 0;font-size:28px;line-height:36px;font-weight:700">Wishlist-mu masih kosong</h2>
+        <p style="margin:0;font-size:16px;line-height:24px;color:#6B6B6B;max-width:460px">Tekan ikon hati di produk mana pun untuk menyimpannya di sini.</p>
+        <a href="Kategori PLP.dc.html" style="margin-top:16px;height:48px;padding:0 40px;background:#111;color:#fff;display:flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.04em">MULAI BELANJA</a>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="max-width:1440px;margin:0 auto;padding:96px 40px 0;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-size:28px;line-height:36px;font-weight:700">{{ recTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px;row-gap:40px">
+      <sc-for list="{{ recs }}" as="id" hint-placeholder-count="4">
+        <dc-import name="Product Card" pid="{{ id }}" hint-size="100%,520px"></dc-import>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="height:96px"></div>
+  <dc-import name="Aone Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;empty&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const empty = !!this.props.empty;
+    const items = [
+      { pid: 1, size: 'M', drop: true }, { pid: 3, size: 'S' }, { pid: 5, out: true }, { pid: 11, size: 'M', drop: true },
+      { pid: 7, size: 'S' }, { pid: 14, size: 'M' }
+    ].map(i => ({ ...i, drop: !!i.drop, out: !!i.out, inStock: !i.out }));
+    return {
+      two: 2, empty, filled: !empty, items,
+      countLabel: empty ? '0 produk' : items.length + ' produk',
+      recTitle: empty ? 'Terlaris minggu ini' : 'Mungkin kamu juga suka',
+      recs: empty ? [8, 4, 0, 1] : [2, 13, 6, 10]
+    };
+  }
+}
+</script>
+</body>
+</html>
