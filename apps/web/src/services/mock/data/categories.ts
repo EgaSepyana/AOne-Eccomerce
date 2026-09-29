@@ -1,6 +1,9 @@
 import type { Category } from "@/entities/category";
 import type { Gender } from "@/entities/product";
 import { products } from "./products";
+import dummyImages2 from "./dummy_images2.json";
+
+const categoryImagePool = dummyImages2.categories;
 
 interface CategorySpec {
   id: string;
@@ -44,16 +47,24 @@ function countProducts(gender: Gender, slug: string): number {
     .length;
 }
 
+// cat_hoodie's Unsplash photo (1556821840-3a63f15732ce) returns 404 upstream; skip it.
+const BROKEN_CATEGORY_IMAGE_IDS = new Set(["cat_hoodie"]);
+
 function representativeImage(gender: Gender, slug: string): string {
+  const dummyEntry = categoryImagePool.find((c) => c.id === `cat_${slug}`);
+  const fromDummyPool =
+    dummyEntry && !BROKEN_CATEGORY_IMAGE_IDS.has(dummyEntry.id)
+      ? dummyEntry.image.url
+      : undefined;
+  if (fromDummyPool) return fromDummyPool;
+
   const match = products.find(
     (p) => p.gender === gender && p.category === slug,
   );
-  const firstVariant = match?.variants[0];
-  const firstImage = firstVariant?.images[0];
-  if (match && firstVariant && firstImage) {
-    return `/images/placeholder/${match.slug}/${firstVariant.color.id}/1.jpg`;
-  }
-  return `/images/placeholder/category/${gender}/${slug}.jpg`;
+  const firstImage = match?.variants[0]?.images[0];
+  if (firstImage) return firstImage.src;
+
+  return "/images/placeholder/fallback.jpg";
 }
 
 export const categories: Category[] = CATEGORY_SPECS.map((spec) => ({

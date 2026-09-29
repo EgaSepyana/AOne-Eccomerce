@@ -9,6 +9,7 @@ import type {
 import type { Gender } from "@/entities/product";
 import { categories } from "./categories";
 import { products } from "./products";
+import dummyImages2 from "./dummy_images2.json";
 
 function findProductId(slug: string): string {
   const found = products.find((p) => p.slug === slug);
@@ -18,12 +19,42 @@ function findProductId(slug: string): string {
   return found.id;
 }
 
+const heroImagePool = dummyImages2.hero_images;
+const lookbookImagePool = dummyImages2.lookbook;
+const outfitImagePool = dummyImages2.outfit_by_occasion;
+const eventImagePool = dummyImages2.event;
+
+function heroImageFor(gender: Gender, index: number): string {
+  const genderHero = heroImagePool.find((h) =>
+    h.description.toLowerCase().includes(gender),
+  );
+  const saleHero = heroImagePool.find((h) => h.id === "hero_3");
+  // Slide index 2 (third slide) shows the gender-neutral sale banner for variety.
+  if (index === 2 && saleHero) return saleHero.url;
+  return (genderHero ?? heroImagePool[0]!).url;
+}
+
+function lookbookImageFor(gender: Gender, index: number): string {
+  const pool = lookbookImagePool.filter((l) => l.gender === gender);
+  const fallback = lookbookImagePool;
+  const list = pool.length > 0 ? pool : fallback;
+  return list[index % list.length]!.url;
+}
+
+function outfitImageFor(occasion: string, gender: Gender): string {
+  const pool = outfitImagePool.filter(
+    (o) => o.occasion.toLowerCase() === occasion.toLowerCase(),
+  );
+  const byGender = pool.find((o) => o.gender === gender);
+  return (byGender ?? pool[0] ?? outfitImagePool[0]!).url;
+}
+
 const heroesByGender: Record<Gender, HeroSlide[]> = {
   wanita: [
     {
       id: "hero-wanita-1",
-      image: "/images/placeholder/hero/wanita/1.jpg",
-      imageMobile: "/images/placeholder/hero/wanita/1-mobile.jpg",
+      image: heroImageFor("wanita", 0),
+      imageMobile: heroImageFor("wanita", 0),
       label: "Koleksi Baru",
       headline: "Gaya Effortless Setiap Hari",
       subheadline: "Temukan basic wardrobe wanita dari bahan premium",
@@ -32,8 +63,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-wanita-2",
-      image: "/images/placeholder/hero/wanita/2.jpg",
-      imageMobile: "/images/placeholder/hero/wanita/2-mobile.jpg",
+      image: heroImageFor("wanita", 1),
+      imageMobile: heroImageFor("wanita", 1),
       label: "Musim Kerja",
       headline: "Rapi Tanpa Ribet ke Kantor",
       subheadline: "Blazer, kemeja, dan celana chino serba padan",
@@ -42,8 +73,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-wanita-3",
-      image: "/images/placeholder/hero/wanita/3.jpg",
-      imageMobile: "/images/placeholder/hero/wanita/3-mobile.jpg",
+      image: heroImageFor("wanita", 2),
+      imageMobile: heroImageFor("wanita", 2),
       label: "Akhir Pekan",
       headline: "Santai di Akhir Pekan",
       subheadline: "Dress dan rok nyaman untuk hangout",
@@ -52,8 +83,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-wanita-4",
-      image: "/images/placeholder/hero/wanita/4.jpg",
-      imageMobile: "/images/placeholder/hero/wanita/4-mobile.jpg",
+      image: heroImageFor("wanita", 3),
+      imageMobile: heroImageFor("wanita", 3),
       label: "Cuaca Dingin",
       headline: "Hangat dengan Gaya Minimalis",
       subheadline: "Sweater dan cardigan rajut untuk musim hujan",
@@ -64,8 +95,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
   pria: [
     {
       id: "hero-pria-1",
-      image: "/images/placeholder/hero/pria/1.jpg",
-      imageMobile: "/images/placeholder/hero/pria/1-mobile.jpg",
+      image: heroImageFor("pria", 0),
+      imageMobile: heroImageFor("pria", 0),
       label: "Koleksi Baru",
       headline: "Basic Wardrobe Pria Masa Kini",
       subheadline: "Kaos, kemeja, dan celana dengan bahan berkualitas",
@@ -74,8 +105,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-pria-2",
-      image: "/images/placeholder/hero/pria/2.jpg",
-      imageMobile: "/images/placeholder/hero/pria/2-mobile.jpg",
+      image: heroImageFor("pria", 1),
+      imageMobile: heroImageFor("pria", 1),
       label: "Musim Kerja",
       headline: "Tampil Rapi di Setiap Meeting",
       subheadline: "Kemeja oxford dan celana chino andalan",
@@ -84,8 +115,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-pria-3",
-      image: "/images/placeholder/hero/pria/3.jpg",
-      imageMobile: "/images/placeholder/hero/pria/3-mobile.jpg",
+      image: heroImageFor("pria", 2),
+      imageMobile: heroImageFor("pria", 2),
       label: "Aktif Bergerak",
       headline: "Nyaman untuk Aktivitas Outdoor",
       subheadline: "Jaket water repellent dan jogger pants",
@@ -94,8 +125,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-pria-4",
-      image: "/images/placeholder/hero/pria/4.jpg",
-      imageMobile: "/images/placeholder/hero/pria/4-mobile.jpg",
+      image: heroImageFor("pria", 3),
+      imageMobile: heroImageFor("pria", 3),
       label: "Cuaca Dingin",
       headline: "Hangat dan Tetap Simpel",
       subheadline: "Hoodie fleece dan sweater rajut favorit",
@@ -106,8 +137,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
   anak: [
     {
       id: "hero-anak-1",
-      image: "/images/placeholder/hero/anak/1.jpg",
-      imageMobile: "/images/placeholder/hero/anak/1-mobile.jpg",
+      image: heroImageFor("anak", 0),
+      imageMobile: heroImageFor("anak", 0),
       label: "Koleksi Baru",
       headline: "Nyaman untuk si Kecil Bermain",
       subheadline: "Kaos dan celana anak berbahan lembut",
@@ -116,8 +147,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-anak-2",
-      image: "/images/placeholder/hero/anak/2.jpg",
-      imageMobile: "/images/placeholder/hero/anak/2-mobile.jpg",
+      image: heroImageFor("anak", 1),
+      imageMobile: heroImageFor("anak", 1),
       label: "Jalan-jalan Keluarga",
       headline: "Kompak Sekeluarga",
       subheadline: "Kemeja flanel serasi untuk momen spesial",
@@ -126,8 +157,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-anak-3",
-      image: "/images/placeholder/hero/anak/3.jpg",
-      imageMobile: "/images/placeholder/hero/anak/3-mobile.jpg",
+      image: heroImageFor("anak", 2),
+      imageMobile: heroImageFor("anak", 2),
       label: "Aktif Bermain",
       headline: "Bebas Bergerak Sepanjang Hari",
       subheadline: "Jogger pants dan hoodie anti ribet",
@@ -136,8 +167,8 @@ const heroesByGender: Record<Gender, HeroSlide[]> = {
     },
     {
       id: "hero-anak-4",
-      image: "/images/placeholder/hero/anak/4.jpg",
-      imageMobile: "/images/placeholder/hero/anak/4-mobile.jpg",
+      image: heroImageFor("anak", 3),
+      imageMobile: heroImageFor("anak", 3),
       label: "Cuaca Dingin",
       headline: "Hangat dan Lucu",
       subheadline: "Sweater rajut anak yang lembut di kulit",
@@ -152,7 +183,7 @@ export const lookbooks: Lookbook[] = [
     id: "lookbook-kerja-wanita",
     slug: "gaya-kerja-wanita",
     title: "Gaya Kerja Wanita",
-    image: "/images/placeholder/lookbook/gaya-kerja-wanita/cover.jpg",
+    image: lookbookImageFor("wanita", 0),
     productIds: [
       findProductId("kemeja-linen-oversize"),
       findProductId("celana-chino-slim-fit-wanita"),
@@ -164,7 +195,7 @@ export const lookbooks: Lookbook[] = [
     id: "lookbook-santai-pria",
     slug: "gaya-santai-pria",
     title: "Gaya Santai Pria",
-    image: "/images/placeholder/lookbook/gaya-santai-pria/cover.jpg",
+    image: lookbookImageFor("pria", 0),
     productIds: [
       findProductId("kaos-katun-supima-crew-neck-pria"),
       findProductId("jogger-pants-pria"),
@@ -176,7 +207,7 @@ export const lookbooks: Lookbook[] = [
     id: "lookbook-hangout-wanita",
     slug: "hangout-akhir-pekan",
     title: "Hangout Akhir Pekan",
-    image: "/images/placeholder/lookbook/hangout-akhir-pekan/cover.jpg",
+    image: lookbookImageFor("wanita", 1),
     productIds: [
       findProductId("dress-midi-satin"),
       findProductId("jaket-denim-wanita"),
@@ -189,7 +220,7 @@ export const lookbooks: Lookbook[] = [
     id: "lookbook-formal-pria",
     slug: "formal-kasual-pria",
     title: "Formal Kasual Pria",
-    image: "/images/placeholder/lookbook/formal-kasual-pria/cover.jpg",
+    image: lookbookImageFor("pria", 1),
     productIds: [
       findProductId("kemeja-oxford-pria"),
       findProductId("celana-chino-slim-fit-pria"),
@@ -203,28 +234,28 @@ const styles: StyleTile[] = [
     id: "style-kerja",
     title: "Kerja",
     description: "Blazer, kemeja, celana bahan",
-    image: "/images/placeholder/style/kerja.jpg",
+    image: outfitImageFor("Kerja", "wanita"),
     href: "/style/kerja",
   },
   {
     id: "style-santai",
     title: "Santai",
     description: "Kaos, kulot, cardigan",
-    image: "/images/placeholder/style/santai.jpg",
+    image: outfitImageFor("Santai", "wanita"),
     href: "/style/santai",
   },
   {
     id: "style-olahraga",
     title: "Olahraga",
     description: "Jogger, hoodie, tank top",
-    image: "/images/placeholder/style/olahraga.jpg",
+    image: outfitImageFor("Olahraga", "wanita"),
     href: "/style/olahraga",
   },
   {
     id: "style-hangout",
     title: "Hangout",
     description: "Dress, rok plisket, jeans",
-    image: "/images/placeholder/style/hangout.jpg",
+    image: outfitImageFor("Hangout", "wanita"),
     href: "/style/hangout",
   },
 ];
@@ -232,8 +263,8 @@ const styles: StyleTile[] = [
 const banners: CampaignBanner[] = [
   {
     id: "banner-diskon-akhir-bulan",
-    image: "/images/placeholder/banner/diskon-akhir-bulan.jpg",
-    imageMobile: "/images/placeholder/banner/diskon-akhir-bulan-mobile.jpg",
+    image: eventImagePool[0]!.url,
+    imageMobile: eventImagePool[0]!.url,
     headline: "Diskon Akhir Bulan",
     subheadline: "Hemat hingga 25% untuk koleksi pilihan",
     ctaLabel: "Belanja Sekarang",

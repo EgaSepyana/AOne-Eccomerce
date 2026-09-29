@@ -1,0 +1,336 @@
+{
+    "source": "Unsplash (https://unsplash.com) - Free for commercial use",
+    "license": "Unsplash License - https://unsplash.com/license",
+    "base_url": "https://images.unsplash.com",
+    "note": "Tambahkan parameter ?w=1200&q=80&auto=format&fit=crop untuk resize gambar",
+    "hero_images": [
+        {
+            "id": "hero_1",
+            "title": "Hero Banner - Koleksi Wanita",
+            "description": "Wanita elegan dengan outfit modern",
+            "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80&auto=format&fit=crop",
+            "photographer": "Unsplash Fashion",
+            "orientation": "landscape"
+        },
+        {
+            "id": "hero_2",
+            "title": "Hero Banner - Koleksi Pria",
+            "description": "Pria stylish dengan pakaian kasual modern",
+            "url": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=1600&q=80&auto=format&fit=crop",
+            "photographer": "Unsplash Fashion",
+            "orientation": "landscape"
+        },
+        {
+            "id": "hero_3",
+            "title": "Hero Banner - Sale / Promo",
+            "description": "Koleksi pakaian terbaru dengan diskon",
+            "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80&auto=format&fit=crop",
+            "photographer": "Unsplash Fashion",
+            "orientation": "landscape"
+        },
+        {
+            "id": "hero_4",
+            "title": "Hero Banner - Koleksi Anak",
+            "description": "Anak-anak dengan outfit cerah dan ceria",
+            "url": "https://images.unsplash.com/photo-1543946207-39bd91e70ca7?w=1600&q=80&auto=format&fit=crop",
+            "photographer": "Unsplash Fashion",
+            "orientation": "landscape"
+        }
+    ],
+    "lookbook": [
+        {
+            "id": "lookbook_men_1",
+            "gender": "pria",
+            "title": "Lookbook Pria - Gaya Urban",
+            "description": "Outfit pria kasual dengan jaket dan celana jeans",
+            "url": "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_men_2",
+            "gender": "pria",
+            "title": "Lookbook Pria - Smart Casual",
+            "description": "Outfit pria semi formal dengan kemeja",
+            "url": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_men_3",
+            "gender": "pria",
+            "title": "Lookbook Pria - Streetwear",
+            "description": "Pria dengan gaya streetwear modern",
+            "url": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_women_1",
+            "gender": "wanita",
+            "title": "Lookbook Wanita - Gaya Elegan",
+            "description": "Wanita dengan dress elegan bernuansa pastel",
+            "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_women_2",
+            "gender": "wanita",
+            "title": "Lookbook Wanita - Casual Chic",
+            "description": "Wanita dengan outfit kasual stylish",
+            "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_women_3",
+            "gender": "wanita",
+            "title": "Lookbook Wanita - Modern Style",
+            "description": "Wanita dengan gaya modern dan minimalis",
+            "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_kids_1",
+            "gender": "anak",
+            "title": "Lookbook Anak - Ceria & Aktif",
+            "description": "Anak dengan pakaian berwarna cerah",
+            "url": "https://images.unsplash.com/photo-1543946207-39bd91e70ca7?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_kids_2",
+            "gender": "anak",
+            "title": "Lookbook Anak - Kasual",
+            "description": "Anak dengan outfit santai sehari-hari",
+            "url": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        },
+        {
+            "id": "lookbook_kids_3",
+            "gender": "anak",
+            "title": "Lookbook Anak - Playful",
+            "description": "Anak dengan gaya playful dan fun",
+            "url": "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=800&q=80&auto=format&fit=crop",
+            "orientation": "portrait"
+        }
+    ],
+    "categories": [
+        {
+            "id": "cat_kaos",
+            "name": "Kaos",
+            "name_en": "T-Shirt",
+            "description": "Koleksi kaos pria dan wanita",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80&auto=format&fit=crop",
+                "alt": "Kaos putih polos - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_kemeja",
+            "name": "Kemeja",
+            "name_en": "Shirt",
+            "description": "Koleksi kemeja formal dan kasual",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80&auto=format&fit=crop",
+                "alt": "Kemeja - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_celana",
+            "name": "Celana",
+            "name_en": "Pants",
+            "description": "Koleksi celana panjang dan pendek",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=80&auto=format&fit=crop",
+                "alt": "Celana jeans - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_jaket",
+            "name": "Jaket",
+            "name_en": "Jacket",
+            "description": "Koleksi jaket berbagai gaya",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80&auto=format&fit=crop",
+                "alt": "Jaket kulit - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_dress",
+            "name": "Dress",
+            "name_en": "Dress",
+            "description": "Koleksi dress wanita untuk berbagai kesempatan",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80&auto=format&fit=crop",
+                "alt": "Dress wanita - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_rok",
+            "name": "Rok",
+            "name_en": "Skirt",
+            "description": "Koleksi rok panjang dan mini",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80&auto=format&fit=crop",
+                "alt": "Rok wanita - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_sweater",
+            "name": "Sweater",
+            "name_en": "Sweater",
+            "description": "Koleksi sweater hangat dan stylish",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80&auto=format&fit=crop",
+                "alt": "Sweater rajut - produk kategori",
+                "orientation": "square"
+            }
+        },
+        {
+            "id": "cat_hoodie",
+            "name": "Hoodie",
+            "name_en": "Hoodie",
+            "description": "Koleksi hoodie kasual dan sporty",
+            "image": {
+                "url": "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80&auto=format&fit=crop",
+                "alt": "Hoodie kasual - produk kategori",
+                "orientation": "square"
+            }
+        }
+    ],
+    "outfit_by_occasion": [
+        {
+            "id": "outfit_kerja_1",
+            "occasion": "Kerja",
+            "title": "Outfit Kerja Formal",
+            "description": "Tampilan profesional untuk di kantor",
+            "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_kerja_2",
+            "occasion": "Kerja",
+            "title": "Outfit Kerja Pria",
+            "description": "Setelan pria rapi dan profesional",
+            "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop",
+            "gender": "pria",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_kerja_3",
+            "occasion": "Kerja",
+            "title": "Outfit Business Casual",
+            "description": "Smart casual untuk lingkungan kerja modern",
+            "url": "https://images.unsplash.com/photo-1601063476271-a159c71ab0b3?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_santai_1",
+            "occasion": "Santai",
+            "title": "Outfit Santai Weekend",
+            "description": "Pakaian santai untuk akhir pekan di rumah",
+            "url": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_santai_2",
+            "occasion": "Santai",
+            "title": "Outfit Kasual Sehari-hari",
+            "description": "Tampilan kasual pria untuk aktivitas sehari-hari",
+            "url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80&auto=format&fit=crop",
+            "gender": "pria",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_santai_3",
+            "occasion": "Santai",
+            "title": "Outfit Lounge Casual",
+            "description": "Pakaian nyaman untuk bersantai",
+            "url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_olahraga_1",
+            "occasion": "Olahraga",
+            "title": "Outfit Gym & Fitness",
+            "description": "Pakaian olahraga untuk gym dan fitness",
+            "url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_olahraga_2",
+            "occasion": "Olahraga",
+            "title": "Outfit Running",
+            "description": "Pakaian olahraga lari outdoor",
+            "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop",
+            "gender": "pria",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_olahraga_3",
+            "occasion": "Olahraga",
+            "title": "Outfit Yoga & Pilates",
+            "description": "Pakaian sporty untuk yoga dan pilates",
+            "url": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_hangout_1",
+            "occasion": "Hangout",
+            "title": "Outfit Hangout Kafe",
+            "description": "Tampilan trendi untuk hangout di kafe",
+            "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_hangout_2",
+            "occasion": "Hangout",
+            "title": "Outfit Hangout Pria",
+            "description": "Gaya pria keren untuk hangout bersama teman",
+            "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80&auto=format&fit=crop",
+            "gender": "pria",
+            "orientation": "portrait"
+        },
+        {
+            "id": "outfit_hangout_3",
+            "occasion": "Hangout",
+            "title": "Outfit OOTD Hangout",
+            "description": "Outfit of the day untuk jalan-jalan bersama teman",
+            "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&auto=format&fit=crop",
+            "gender": "wanita",
+            "orientation": "portrait"
+        }
+    ],
+    "event": [
+        {
+            "id": "event_1",
+            "title": "Fashion Sale Event - End of Season",
+            "description": "Banner event sale akhir musim dengan diskon besar",
+            "url": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80&auto=format&fit=crop",
+            "type": "sale_event",
+            "orientation": "landscape",
+            "suggested_text": {
+                "headline": "END OF SEASON SALE",
+                "subheadline": "Up to 70% Off",
+                "cta": "Belanja Sekarang"
+            }
+        }
+    ],
+    "usage_tips": {
+        "resize": "Ganti nilai ?w=800 sesuai kebutuhan (misalnya w=1200 untuk desktop, w=600 untuk mobile)",
+        "quality": "Parameter q=80 untuk kualitas bagus, q=60 untuk file lebih kecil",
+        "format": "auto=format akan otomatis pilih WebP jika browser support",
+        "crop": "fit=crop akan memotong gambar agar sesuai dimensi",
+        "example": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=1200&h=600&q=80&auto=format&fit=crop"
+    }
+}

@@ -1,4 +1,40 @@
 import type { Product, ProductImage, Size, Variant } from "@/entities/product";
+import dummyImages from "./dummy_image.json";
+
+type DummyImagePool = Record<string, { url: string; alt: string }[]>;
+type DummyImageData = Record<string, DummyImagePool>;
+
+const CATEGORY_FALLBACK: Record<string, string> = {
+  blazer: "jaket",
+  cardigan: "sweater",
+  cargo: "celana",
+  jeans: "celana",
+  jogger: "celana",
+  kulot: "celana",
+  parka: "jaket",
+  pendek: "celana",
+  polo: "kaos",
+  rompi: "jaket",
+};
+
+function resolveDummyPool(
+  gender: string,
+  category: string,
+): { url: string; alt: string }[] {
+  const data = dummyImages as DummyImageData;
+  const genderPool = data[gender] ?? {};
+  const key = genderPool[category]?.length
+    ? category
+    : (CATEGORY_FALLBACK[category] ?? category);
+  const pool = genderPool[key];
+  if (pool && pool.length > 0) return pool;
+
+  for (const otherGender of Object.keys(data)) {
+    const fallbackPool = data[otherGender]?.[key];
+    if (fallbackPool && fallbackPool.length > 0) return fallbackPool;
+  }
+  return [{ url: "/images/placeholder/fallback.jpg", alt: "Produk Aone" }];
+}
 
 interface ColorSpec {
   id: string;
@@ -77,12 +113,15 @@ function pickSizeSet(seed: number): string[] {
 }
 
 function makeImages(
-  slug: string,
+  gender: string,
+  category: string,
   colorId: string,
   name: string,
   colorName: string,
   count: number,
+  variantSeed: number,
 ): ProductImage[] {
+  const pool = resolveDummyPool(gender, category);
   const kinds: ProductImage["kind"][] = [
     "packshot",
     "model",
@@ -99,8 +138,9 @@ function makeImages(
       "gaya sehari-hari",
     ];
     const view = views[(n - 1) % views.length] ?? "tampak depan";
+    const dummy = pool[(variantSeed + n - 1) % pool.length]!;
     const img: ProductImage = {
-      src: `/images/placeholder/${slug}/${colorId}/${n}.jpg`,
+      src: dummy.url,
       alt: `${name} warna ${colorName}, ${view}`,
       kind,
     };
@@ -118,7 +158,8 @@ function makeImages(
 }
 
 function makeVariants(
-  slug: string,
+  gender: string,
+  category: string,
   name: string,
   colorKeys: string[],
   sizeSeed: number,
@@ -132,7 +173,15 @@ function makeVariants(
     const sizes = makeSizes(pickSizeSet(sizeSeed + idx));
     return {
       color: { id: color.id, name: color.name, hex: color.hex },
-      images: makeImages(slug, color.id, name, color.name, imageCount),
+      images: makeImages(
+        gender,
+        category,
+        color.id,
+        name,
+        color.name,
+        imageCount,
+        sizeSeed + idx,
+      ),
       sizes,
     };
   });
@@ -1393,7 +1442,8 @@ const ALL_SPECS: ProductSpec[] = [...wanita, ...pria, ...anak];
 
 export const products: Product[] = ALL_SPECS.map((spec, index) => {
   const variants = makeVariants(
-    spec.slug,
+    spec.gender,
+    spec.category,
     spec.name,
     spec.colorKeys,
     index,

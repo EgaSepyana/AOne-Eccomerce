@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 90, 100],
     contentDispositionType: "inline",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

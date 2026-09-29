@@ -1,0 +1,413 @@
+{
+    "pria": {
+        "kaos": [
+            {
+                "url": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80",
+                "alt": "white crew neck t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+                "alt": "man wearing white crew-neck t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white crew neck t-shirt on grass"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white t-shirt and black denim jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1605949405965-d49ada3f9189?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in yellow crew neck t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1552642986-ccb41e7059e7?auto=format&fit=crop&w=800&q=80",
+                "alt": "man wearing gray shirt"
+            }
+        ],
+        "kemeja": [
+            {
+                "url": "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white dress shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1624835567150-0c530a20d8cc?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in blue dress shirt and black pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1594938291221-94f18cbb5660?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in blue and white striped dress shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1627686011747-74adda3d2343?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white dress shirt near plants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in blue dress shirt with sunglasses"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white shirt and black trousers with suspenders"
+            }
+        ],
+        "celana": [
+            {
+                "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80",
+                "alt": "man wearing brown fitted jeans and sneakers"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1622450180332-3da1126f10a4?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in blue shirt and black pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1623200693945-ec1e9991039a?auto=format&fit=crop&w=800&q=80",
+                "alt": "man sitting wearing white shirt and brown pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white t-shirt and black pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1623756597226-caa7154b4306?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in checkered shirt and blue denim jeans"
+            }
+        ],
+        "jaket": [
+            {
+                "url": "https://images.unsplash.com/photo-1675877879221-871aa9f7c314?auto=format&fit=crop&w=800&q=80",
+                "alt": "man with beard in black leather jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1620228922597-cca58f177310?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in brown zip up jacket and jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?auto=format&fit=crop&w=800&q=80",
+                "alt": "blue denim button up jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1649768722440-214c14158d65?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in yellow jacket on mountain"
+            }
+        ],
+        "dress": [],
+        "rok": [],
+        "sweater": [
+            {
+                "url": "https://images.unsplash.com/photo-1642886512785-b5fee9faad7f?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in red sweater and black pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1599032909736-0155c1d43a6c?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in gray sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1642886513133-cdbee2639272?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in blue sweater and tie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1608975321561-176c1b187d24?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in red knit sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1714023498660-e4c470b285b7?auto=format&fit=crop&w=800&q=80",
+                "alt": "young man in blue sweater"
+            }
+        ],
+        "hoodie": [
+            {
+                "url": "https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in black hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in grey hoodie jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1615397587950-3cbb55f95b77?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in white pullover hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1611817757591-c3f345024273?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in gray hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1685328403732-64be6bb9d112?auto=format&fit=crop&w=800&q=80",
+                "alt": "man in hoodie on city street"
+            }
+        ]
+    },
+    "wanita": {
+        "kaos": [
+            {
+                "url": "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black crew neck t-shirt and jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in t-shirt near pink wall"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1583744999783-efe9dc5eac91?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black crew neck t-shirt and jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1551799517-eb8f03cb5e6a?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in red crew-neck with printed text"
+            }
+        ],
+        "kemeja": [
+            {
+                "url": "https://images.unsplash.com/photo-1611235116156-0cbda6649efb?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in white button up shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1761117228880-df2425bd70da?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in red blouse"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1680690517143-d813ac08cd13?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in white shirt and white pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1764337593519-c51a77b4fc3d?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in floral print blouse"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1765365353704-ed0b6e1b11c2?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in pink floral blouse"
+            }
+        ],
+        "celana": [
+            {
+                "url": "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in white tank top and blue denim jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
+                "alt": "person wears blue jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1475178626620-a4d074967452?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in jeans and white top"
+            }
+        ],
+        "jaket": [
+            {
+                "url": "https://images.unsplash.com/photo-1602370463198-086436840055?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black leather jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1709542441696-e6f05e31ad12?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman wearing a jean jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1672529279723-a11dbbbc7782?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black jacket with fur collar"
+            }
+        ],
+        "dress": [
+            {
+                "url": "https://images.unsplash.com/photo-1762154057377-cc9d3dd6900c?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in floral sundress"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1671848633245-79cc98b0dbe8?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in colorful dress"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1599662875272-64de8289f6d8?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black long sleeve dress"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1602010069450-0a62034f235c?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in floral dress"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1616313253719-c46514cddee1?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in floral long sleeve dress"
+            }
+        ],
+        "rok": [
+            {
+                "url": "https://images.unsplash.com/photo-1789110854735-67c4e4737aa2?auto=format&fit=crop&w=800&q=80",
+                "alt": "white skirt with blue floral pattern"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1789110854005-6376fa97be36?auto=format&fit=crop&w=800&q=80",
+                "alt": "black wrap skirt with feather print"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1789110519584-ce21260be4e6?auto=format&fit=crop&w=800&q=80",
+                "alt": "red polka-dot skirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1590852669429-d1cd8775ea59?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in black floral skirt"
+            }
+        ],
+        "sweater": [
+            {
+                "url": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?auto=format&fit=crop&w=800&q=80",
+                "alt": "grey knit sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1608984361471-ff566593088f?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in red sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1580331451062-99ff652288d7?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in blue sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1643825664857-7e6e4124f289?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in yellow sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1622925492162-98c3760a7080?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in pink sweater"
+            }
+        ],
+        "hoodie": [
+            {
+                "url": "https://images.unsplash.com/photo-1508216310976-c518daae0cdc?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1516195851888-6f1a981a862e?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in pink pullover hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1526476148966-98bd039463ea?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in white pullover hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1578470507807-3fc541d5f544?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman holding hood"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1577597759406-0bd867a7c07f?auto=format&fit=crop&w=800&q=80",
+                "alt": "woman in red hoodie"
+            }
+        ]
+    },
+    "anak": {
+        "kaos": [
+            {
+                "url": "https://images.unsplash.com/photo-1620905385976-9f191e837efd?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in red crew neck t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1754639488181-7eae9f6c06e0?auto=format&fit=crop&w=800&q=80",
+                "alt": "child in blue shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1761475048694-816cf2823ae3?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in black t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1761204474559-8f1d1a7e9104?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in purple t-shirt"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1760808573899-fd8d0f5ce90e?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in dinosaur t-shirt"
+            }
+        ],
+        "kemeja": [
+            {
+                "url": "https://images.unsplash.com/photo-1624302219047-c281a210843e?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in plaid button up shirt"
+            }
+        ],
+        "celana": [
+            {
+                "url": "https://images.unsplash.com/photo-1781369068097-32ba353516ec?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in blue shirt and pink pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1778788732586-ba75ba2e90c1?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in red polo and brown pants"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1787009132223-3a1ba79e3981?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in white blazer and tan trousers"
+            }
+        ],
+        "jaket": [
+            {
+                "url": "https://images.unsplash.com/photo-1758782213532-bbb5fd89885e?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in stylish jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1606841466616-795c2c8dec72?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in denim jacket and jeans"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1529598993581-b025f3f79f9c?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in grey button-up jacket"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1759473434572-64c4bfd8cb31?auto=format&fit=crop&w=800&q=80",
+                "alt": "child in winter coat"
+            }
+        ],
+        "dress": [
+            {
+                "url": "https://images.unsplash.com/photo-1578897367107-2828e351c8a8?auto=format&fit=crop&w=800&q=80",
+                "alt": "smiling girl holding her dress"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1759313560250-3bb4bc1d10bc?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in starry dress"
+            }
+        ],
+        "rok": [],
+        "sweater": [
+            {
+                "url": "https://images.unsplash.com/photo-1773238582974-9c0aea55e842?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in blue sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1739660223481-cd22f4219a86?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl wearing a sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1624272949900-9ae4c56397e8?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in red and white knit sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1767779734185-dab25585c821?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in red sweater"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1615863712239-becde744591a?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in red and black sweater"
+            }
+        ],
+        "hoodie": [
+            {
+                "url": "https://images.unsplash.com/photo-1631084412577-9f4d5829be98?auto=format&fit=crop&w=800&q=80",
+                "alt": "child in white and blue hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1678354787621-c16724e8bc5d?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in sweatshirt with smiley face"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1719421992052-e7d4394fa7fd?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in white hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1608093602094-e9c880dd9622?auto=format&fit=crop&w=800&q=80",
+                "alt": "boy in black hoodie"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1775836214324-843581b270ee?auto=format&fit=crop&w=800&q=80",
+                "alt": "girl in light blue hoodie"
+            }
+        ]
+    }
+}
