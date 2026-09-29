@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "e2e": "playwright test",
+    "lighthouse": "lhci autorun",
     "check": "bun run typecheck && bun run lint && bun run test",
     "prepare": "husky"
   },
@@ -34,6 +35,8 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

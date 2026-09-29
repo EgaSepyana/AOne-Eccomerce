@@ -68,6 +68,7 @@ export function MegaMenu({ gender, open }: MegaMenuProps) {
         </div>
         <Link
           href={`/c/${gender}`}
+          role="menuitem"
           className="bg-subtle relative block aspect-[4/3] overflow-hidden"
         >
           {categories[0] && (

@@ -92,6 +92,7 @@ export function Drawer({
       ref={rootRef}
       className={cn("fixed inset-0 z-50", !open && "pointer-events-none")}
       aria-hidden={!open}
+      inert={!open || undefined}
     >
       <div
         ref={backdropRef}

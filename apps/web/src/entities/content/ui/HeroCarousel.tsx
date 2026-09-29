@@ -108,7 +108,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         </h1>
         <p className="text-body text-white">{slide.subheadline}</p>
         <Link href={slide.ctaHref} className="mt-2 self-start">
-          <Button className="text-ink bg-white hover:bg-white/90">
+          <Button className="text-ink bg-white hover:bg-subtle">
             {slide.ctaLabel}
           </Button>
         </Link>

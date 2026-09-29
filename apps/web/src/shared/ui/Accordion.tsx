@@ -59,6 +59,8 @@ function AccordionRoot({
 interface AccordionItemContextValue {
   id: string;
   isOpen: boolean;
+  triggerId: string;
+  panelId: string;
 }
 
 const AccordionItemContext = createContext<AccordionItemContextValue | null>(
@@ -77,9 +79,13 @@ function AccordionItem({
   const ctx = useContext(AccordionContext);
   if (!ctx) throw new Error("Accordion.Item must be used within Accordion");
   const isOpen = ctx.openItems.has(id);
+  const triggerId = useId();
+  const panelId = useId();
 
   return (
-    <AccordionItemContext.Provider value={{ id, isOpen }}>
+    <AccordionItemContext.Provider
+      value={{ id, isOpen, triggerId, panelId }}
+    >
       <div className={cn("border-border border-b", className)}>{children}</div>
     </AccordionItemContext.Provider>
   );
@@ -90,18 +96,15 @@ function AccordionTrigger({ children }: { children: ReactNode }) {
   const itemCtx = useContext(AccordionItemContext);
   if (!ctx || !itemCtx)
     throw new Error("Accordion.Trigger must be used within Accordion.Item");
-  const triggerId = useId();
-  const panelId = useId();
 
   return (
     <button
       type="button"
-      id={triggerId}
+      id={itemCtx.triggerId}
       aria-expanded={itemCtx.isOpen}
-      aria-controls={panelId}
+      aria-controls={itemCtx.panelId}
       onClick={() => ctx.toggle(itemCtx.id)}
       className="text-h3 text-ink flex w-full items-center justify-between py-4 text-left font-bold"
-      data-panel-id={panelId}
     >
       {children}
       <Icon
@@ -152,6 +155,9 @@ function AccordionContent({ children }: { children: ReactNode }) {
   return (
     <div
       ref={ref}
+      id={itemCtx.panelId}
+      role="region"
+      aria-labelledby={itemCtx.triggerId}
       className="overflow-hidden"
       style={{ height: isOpen ? "auto" : 0 }}
     >
